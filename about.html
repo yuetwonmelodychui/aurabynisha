@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="icon" type="image/png" href="./img/logo.PNG" />
+    <title>About Us | AURA</title>
+  </head>
+  <body>
+
+    <header>
+      <div class="logo">
+        <img src="./img/logo.PNG" alt="AURA logo" class="logo-img" />
+        <span>AURA</span>
+      </div>
+      <nav>
+        <ul id="menu">
+          <li><a href="./index.html">Welcome</a></li>
+          <li><a href="./hijabs.html">Hijabs</a></li>
+          <li><a href="./shawls.html">Shawls</a></li>
+          <li><a href="./about.html" class="active">About Us</a></li>
+        </ul>
+      </nav>
+
+      <span class="hamburger" id="hamburger" onclick="toggleMenu()">⋮</span>
+    </header>
+
+    <section class="page-banner about-banner">
+      <h1>About Us</h1>
+    </section>
+
+    <section class="creator">
+      <div class="creator-row">
+        <img src="./img/temp_creator.jpeg" alt="Image of creator" />
+        <div class="creator-text">
+          <h2>About the Creator</h2>
+          <p>Nisha is the heart and hands behind AURA. Born with a love for fabric, texture, and the quiet power of modest fashion, she started AURA with a single belief — that every woman deserves to feel seen, celebrated, and beautiful in what she wears. Each piece is a reflection of her roots, her culture, and her passion for craftsmanship.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mission">
+      <div class="mission-text">
+        <h2>Mission Statement</h2>
+        <p>At AURA, every piece tells a story. Our hijabs and shawls are 100% original designs — no mass production, no shortcuts. Each one is thoughtfully handcrafted by skilled women artisans in Pakistan, who bring generations of textile tradition into every stitch, fold, and finish.</p>
+        <p>We are committed to sustainability. Our fabrics are sourced responsibly, our process is slow and intentional, and our packaging is designed with the earth in mind. We believe that fashion can be both beautiful and conscious — and that the two should never have to compete.</p>
+        <p>Behind every piece is a woman who made it with her hands, and a woman who will wear it with pride. AURA exists to honour both. When you choose AURA, you are not just buying a product — you are supporting independent craftsmanship, empowering women, and carrying a piece of something real.</p>
+      </div>
+    </section>
+
+    <section class="feedback">
+      <div class="feedback-text">
+        <h2>Share Your Feedback</h2>
+        <p>We'd love to hear from you. Let us know what you think!</p>
+        <form action="https://formspree.io/f/mjgljvzd" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" placeholder="Your feedback..." rows="5" required></textarea>
+          <button type="submit" class="buy-btn">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="contact-text">
+        <h2>CONTACT US</h2>
+        <div class="contact-links">
+          <a href="https://www.instagram.com/aurabynisha/">Instagram</a>
+          <span>|</span>
+          <a href="mailto:aurabynisha05@gmail.com">Email</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>©2025 AURA by Nisha. Designed by Melody Chui.</p>
+    </footer>
+
+    <script>
+      // --- Hamburger Menu Section ---
+      function toggleMenu() {
+        const menu = document.getElementById('menu');
+        menu.classList.toggle('show');
+      }
+
+      document.addEventListener('click', function (e) {
+        const menu = document.getElementById('menu');
+        const hamburger = document.getElementById('hamburger');
+        if (menu.classList.contains('show') && !menu.contains(e.target) && e.target !== hamburger) {
+          menu.classList.remove('show');
+        }
+      });
+
+      // --- Flower Cursor Section ---
+      // Found this section through research online
+      const petals = ['🪷'];
+      let lastTime = 0;
+
+      document.addEventListener('mousemove', function (e) {
+        const now = Date.now();
+        if (now - lastTime < 50) return;
+        lastTime = now;
+
+        const petal = document.createElement('span');
+        petal.textContent = petals[Math.floor(Math.random() * petals.length)];
+
+        petal.style.position = 'fixed';
+        petal.style.pointerEvents = 'none';
+        petal.style.zIndex = '9999';
+        petal.style.fontSize = '18px';
+        petal.style.left = e.clientX + 'px';
+        petal.style.top = e.clientY + 'px';
+        petal.style.userSelect = 'none';
+        petal.style.animation = 'petalFall 1s ease-out forwards';
+
+        petal.style.setProperty('--dx', (Math.random() - 0.5) * 60 + 'px');
+        petal.style.setProperty('--dy', (Math.random() * 60 + 20) + 'px');
+        petal.style.setProperty('--rot', (Math.random() - 0.5) * 360 + 'deg');
+
+        document.body.appendChild(petal);
+        petal.addEventListener('animationend', function () { petal.remove(); });
+      });
+    </script>
+  </body>
+</html>
