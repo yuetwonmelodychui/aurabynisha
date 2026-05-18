@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="./style.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    <link rel="icon" type="image/png" href="./img/logo.PNG" />
+    <link rel="icon" type="image/png" href="./img/logo.png" />
     <title>About Us | AURA</title>
   </head>
   <body>
@@ -91,36 +91,6 @@
         if (menu.classList.contains('show') && !menu.contains(e.target) && e.target !== hamburger) {
           menu.classList.remove('show');
         }
-      });
-
-      // --- Flower Cursor Section ---
-      // Found this section through research online
-      const petals = ['🪷'];
-      let lastTime = 0;
-
-      document.addEventListener('mousemove', function (e) {
-        const now = Date.now();
-        if (now - lastTime < 50) return;
-        lastTime = now;
-
-        const petal = document.createElement('span');
-        petal.textContent = petals[Math.floor(Math.random() * petals.length)];
-
-        petal.style.position = 'fixed';
-        petal.style.pointerEvents = 'none';
-        petal.style.zIndex = '9999';
-        petal.style.fontSize = '18px';
-        petal.style.left = e.clientX + 'px';
-        petal.style.top = e.clientY + 'px';
-        petal.style.userSelect = 'none';
-        petal.style.animation = 'petalFall 1s ease-out forwards';
-
-        petal.style.setProperty('--dx', (Math.random() - 0.5) * 60 + 'px');
-        petal.style.setProperty('--dy', (Math.random() * 60 + 20) + 'px');
-        petal.style.setProperty('--rot', (Math.random() - 0.5) * 360 + 'deg');
-
-        document.body.appendChild(petal);
-        petal.addEventListener('animationend', function () { petal.remove(); });
       });
     </script>
   </body>

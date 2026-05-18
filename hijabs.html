@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="./style.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
-    <link rel="icon" type="image/png" href="./img/logo.PNG" />
+    <link rel="icon" type="image/png" href="./img/logo.png" />
     <title>Hijabs | AURA</title>
   </head>
   <body>
@@ -24,7 +23,6 @@
           <li><a href="./about.html">About Us</a></li>
         </ul>
       </nav>
-
       <span class="hamburger" id="hamburger" onclick="toggleMenu()">⋮</span>
     </header>
 
@@ -39,38 +37,28 @@
           <p>Each hijab is handcrafted with care, designed to drape beautifully and feel luxurious against the skin.</p>
         </div>
         <div class="feature-image">
-
-          <div id="hijab-carousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="./img/temp_hijab_main.jpeg" class="d-block w-100" alt="Featured Hijab" />
-              </div>
-              <div class="carousel-item">
-                <img src="./img/temp_hijab1.jpg" class="d-block w-100" alt="Silky Hijab" />
-              </div>
-              <div class="carousel-item">
-                <img src="./img/temp_hijab2.jpg" class="d-block w-100" alt="Lushious Hijab" />
-              </div>
-              <div class="carousel-item">
-                <img src="./img/temp_hijab3.jpg" class="d-block w-100" alt="Ninja Hijab" />
-              </div>
+          <div class="custom-carousel" id="hijab-carousel">
+            <div class="custom-carousel-track">
+              <img src="./img/temp_hijab_main.jpeg" alt="Featured Hijab" class="custom-carousel-slide active" />
+              <img src="./img/temp_hijab1.jpg" alt="Silky Hijab" class="custom-carousel-slide" />
+              <img src="./img/temp_hijab2.jpg" alt="Lushious Hijab" class="custom-carousel-slide" />
+              <img src="./img/temp_hijab3.jpg" alt="Ninja Hijab" class="custom-carousel-slide" />
+              <button class="custom-carousel-prev" onclick="moveCarousel('hijab-carousel', -1)">&#8249;</button>
+              <button class="custom-carousel-next" onclick="moveCarousel('hijab-carousel', 1)">&#8250;</button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#hijab-carousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#hijab-carousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+            <div class="carousel-dots">
+              <span class="carousel-dot active" onclick="goToSlide('hijab-carousel', 0)"></span>
+              <span class="carousel-dot" onclick="goToSlide('hijab-carousel', 1)"></span>
+              <span class="carousel-dot" onclick="goToSlide('hijab-carousel', 2)"></span>
+              <span class="carousel-dot" onclick="goToSlide('hijab-carousel', 3)"></span>
+            </div>
           </div>
-
         </div>
       </div>
     </section>
 
     <section class="products">
-      <h2>MODALS</h2>
+      <h2>HIJABS</h2>
       <div class="product-grid">
 
         <div class="product-card" onclick="openModal('modal-hijab1')">
@@ -116,39 +104,78 @@
     </section>
 
     <div class="product-modal" id="modal-hijab1">
-      <div class="modal-box">
+      <div class="popup-box">
         <button class="modal-close" onclick="closeModal('modal-hijab1')">✕</button>
-        <img src="./img/temp_hijab1.jpg" alt="Silky Hijab" />
-        <div class="modal-info">
-          <p class="modal-name">Silky Hijab</p>
-          <p class="modal-desc">A smooth, lightweight hijab with a subtle sheen. Perfect for everyday wear or special occasions. Available in multiple colours.</p>
-          <p class="modal-price">$30.00 USD</p>
+        <div class="popup-img-carousel" id="popup-hijab1">
+          <div class="popup-img-track">
+            <img src="./img/temp_hijab1.jpg" alt="Silky Hijab" class="popup-img-slide active" />
+            <img src="./img/temp_hijab1_2.jpeg" alt="Silky Hijab 2" class="popup-img-slide" />
+            <img src="./img/temp_hijab1_3.jpeg" alt="Silky Hijab 3" class="popup-img-slide" />
+          </div>
+          <button class="popup-img-prev" onclick="movePopup('popup-hijab1', -1)">&#8249;</button>
+          <button class="popup-img-next" onclick="movePopup('popup-hijab1', 1)">&#8250;</button>
+          <div class="popup-dots">
+            <span class="popup-dot active" onclick="goToPopupSlide('popup-hijab1', 0)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-hijab1', 1)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-hijab1', 2)"></span>
+          </div>
+        </div>
+        <div class="popup-info">
+          <p class="popup-name">Silky Hijab</p>
+          <p class="popup-desc">A smooth, lightweight hijab with a subtle sheen. Perfect for everyday wear or special occasions. Available in multiple colours.</p>
+          <p class="popup-price">$30.00 USD</p>
           <button class="buy-btn">Buy Now</button>
         </div>
       </div>
     </div>
 
     <div class="product-modal" id="modal-hijab2">
-      <div class="modal-box">
+      <div class="popup-box">
         <button class="modal-close" onclick="closeModal('modal-hijab2')">✕</button>
-        <img src="./img/temp_hijab2.jpg" alt="Lushious Hijab" />
-        <div class="modal-info">
-          <p class="modal-name">Lushious Hijab</p>
-          <p class="modal-desc">A rich, full-bodied hijab with a soft drape and luxurious feel. Handcrafted for those who love a little extra elegance.</p>
-          <p class="modal-price">$50.00 USD</p>
+        <div class="popup-img-carousel" id="popup-hijab2">
+          <div class="popup-img-track">
+            <img src="./img/temp_hijab2.jpg" alt="Lushious Hijab" class="popup-img-slide active" />
+            <img src="./img/temp_hijab2_2.jpeg" alt="Lushious Hijab 2" class="popup-img-slide" />
+            <img src="./img/temp_hijab2_3.jpeg" alt="Lushious Hijab 3" class="popup-img-slide" />
+          </div>
+          <button class="popup-img-prev" onclick="movePopup('popup-hijab2', -1)">&#8249;</button>
+          <button class="popup-img-next" onclick="movePopup('popup-hijab2', 1)">&#8250;</button>
+          <div class="popup-dots">
+            <span class="popup-dot active" onclick="goToPopupSlide('popup-hijab2', 0)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-hijab2', 1)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-hijab2', 2)"></span>
+          </div>
+        </div>
+        <div class="popup-info">
+          <p class="popup-name">Lushious Hijab</p>
+          <p class="popup-desc">A rich, full-bodied hijab with a soft drape and luxurious feel. Handcrafted for those who love a little extra elegance.</p>
+          <p class="popup-price">$50.00 USD</p>
           <button class="buy-btn">Buy Now</button>
         </div>
       </div>
     </div>
 
     <div class="product-modal" id="modal-hijab3">
-      <div class="modal-box">
+      <div class="popup-box">
         <button class="modal-close" onclick="closeModal('modal-hijab3')">✕</button>
-        <img src="./img/temp_hijab3.jpg" alt="Ninja Hijab" />
-        <div class="modal-info">
-          <p class="modal-name">Ninja Hijab</p>
-          <p class="modal-desc">A sleek, secure-fit ninja hijab that stays in place all day. Comfortable, breathable, and made for the woman always on the move.</p>
-          <p class="modal-price">$40.00 USD</p>
+        <div class="popup-img-carousel" id="popup-hijab3">
+          <div class="popup-img-track">
+            <img src="./img/temp_hijab3.jpg" alt="Ninja Hijab" class="popup-img-slide active" />
+            <img src="./img/temp_hijab3_2.jpeg" alt="Ninja Hijab 2" class="popup-img-slide" />
+            <img src="./img/temp_hijab3_3.jpeg" alt="Ninja Hijab 3" class="popup-img-slide" />
+          </div>
+          <button class="popup-img-prev" onclick="movePopup('popup-hijab3', -1)">&#8249;</button>
+          <button class="popup-img-next" onclick="movePopup('popup-hijab3', 1)">&#8250;</button>
+          <div class="popup-dots">
+            <span class="popup-dot active" onclick="goToPopupSlide('popup-hijab3', 0)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-hijab3', 1)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-hijab3', 2)"></span>
+          </div>
+        </div>
+        <div class="popup-info">
+          <p class="popup-name">Ninja Hijab</p>
+          <p class="popup-desc">A sleek, secure-fit ninja hijab that stays in place all day. Comfortable, breathable, and made for the woman always on the move.</p>
+          <p class="popup-price">$40.00 USD</p>
           <button class="buy-btn">Buy Now</button>
         </div>
       </div>
@@ -169,11 +196,49 @@
       <p>©2025 AURA by Nisha. Designed by Melody Chui.</p>
     </footer>
 
-    <!-- BOOTSTRAP SECTION -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    
     <script>
-      // --- Product Popup Section ----
+      function moveCarousel(id, dir) {
+        const carousel = document.getElementById(id);
+        const slides = carousel.querySelectorAll('.custom-carousel-slide');
+        const dots = carousel.querySelectorAll('.carousel-dot');
+        let current = Array.from(slides).findIndex(s => s.classList.contains('active'));
+        slides[current].classList.remove('active');
+        if (dots.length) dots[current].classList.remove('active');
+        current = (current + dir + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        if (dots.length) dots[current].classList.add('active');
+      }
+
+      function goToSlide(id, index) {
+        const carousel = document.getElementById(id);
+        const slides = carousel.querySelectorAll('.custom-carousel-slide');
+        const dots = carousel.querySelectorAll('.carousel-dot');
+        slides.forEach((s, i) => { s.classList.toggle('active', i === index); });
+        dots.forEach((d, i) => { d.classList.toggle('active', i === index); });
+      }
+
+      setInterval(() => moveCarousel('hijab-carousel', 1), 3000);
+
+      function movePopup(id, dir) {
+        const carousel = document.getElementById(id);
+        const slides = carousel.querySelectorAll('.popup-img-slide');
+        const dots = carousel.querySelectorAll('.popup-dot');
+        let current = Array.from(slides).findIndex(s => s.classList.contains('active'));
+        slides[current].classList.remove('active');
+        if (dots.length) dots[current].classList.remove('active');
+        current = (current + dir + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        if (dots.length) dots[current].classList.add('active');
+      }
+
+      function goToPopupSlide(id, index) {
+        const carousel = document.getElementById(id);
+        const slides = carousel.querySelectorAll('.popup-img-slide');
+        const dots = carousel.querySelectorAll('.popup-dot');
+        slides.forEach((s, i) => { s.classList.toggle('active', i === index); });
+        dots.forEach((d, i) => { d.classList.toggle('active', i === index); });
+      }
+
       function openModal(id) {
         document.getElementById(id).style.display = 'flex';
       }
@@ -184,13 +249,10 @@
 
       document.querySelectorAll('.product-modal').forEach(function (modal) {
         modal.addEventListener('click', function (e) {
-          if (e.target === modal) {
-            modal.style.display = 'none';
-          }
+          if (e.target === modal) modal.style.display = 'none';
         });
       });
 
-      // --- Hamburger Menu Section ---
       function toggleMenu() {
         const menu = document.getElementById('menu');
         menu.classList.toggle('show');
@@ -202,36 +264,6 @@
         if (menu.classList.contains('show') && !menu.contains(e.target) && e.target !== hamburger) {
           menu.classList.remove('show');
         }
-      });
-
-      // --- Flower Cursor Section ---
-      // Found this section through research online
-      const petals = ['🪷'];
-      let lastTime = 0;
-
-      document.addEventListener('mousemove', function (e) {
-        const now = Date.now();
-        if (now - lastTime < 50) return;
-        lastTime = now;
-
-        const petal = document.createElement('span');
-        petal.textContent = petals[Math.floor(Math.random() * petals.length)];
-
-        petal.style.position = 'fixed';
-        petal.style.pointerEvents = 'none';
-        petal.style.zIndex = '9999';
-        petal.style.fontSize = '18px';
-        petal.style.left = e.clientX + 'px';
-        petal.style.top = e.clientY + 'px';
-        petal.style.userSelect = 'none';
-        petal.style.animation = 'petalFall 1s ease-out forwards';
-
-        petal.style.setProperty('--dx', (Math.random() - 0.5) * 60 + 'px');
-        petal.style.setProperty('--dy', (Math.random() * 60 + 20) + 'px');
-        petal.style.setProperty('--rot', (Math.random() - 0.5) * 360 + 'deg');
-
-        document.body.appendChild(petal);
-        petal.addEventListener('animationend', function () { petal.remove(); });
       });
     </script>
   </body>
