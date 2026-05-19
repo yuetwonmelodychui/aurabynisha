@@ -1000,6 +1000,10 @@ footer p {
         height: 380px;
     }
 
+    .feature {
+        padding: 60px 0;
+    }
+
     .product-grid {
         width: 90%;
         gap: 24px;
@@ -1029,6 +1033,10 @@ footer p {
 
     .contact-text {
         width: 78%;
+    }
+
+    .custom-carousel-track {
+        height: 380px;
     }
 }
 
