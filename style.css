@@ -1,16 +1,8 @@
 /* --- FONTS --- */
-/* Title Font: Playfair Display */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-
-/* Subtitle Font: Montserrat */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-/* Text Font: Raleway */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-
-/* Content Font: Lora */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
-
 
 /* --- GLOBAL STYLES --- */
 :root {
@@ -88,6 +80,7 @@ nav ul {
     margin: 0;
     padding: 0;
 }
+
 nav ul li {
     line-height: 1;
     display: flex;
@@ -106,7 +99,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    border-bottom-color: var(--white);  
+    border-bottom-color: var(--white);
 }
 
 nav ul li a.active {
@@ -337,7 +330,7 @@ nav ul li a.active {
 /* --- PRODUCT GRID DISPLAY --- */
 .products {
     background-color: var(--viridian);
-    padding: 40px 0 40px 0;
+    padding: 40px 0 80px 0;
     text-align: center;
     margin-bottom: 0;
 }
@@ -365,6 +358,7 @@ nav ul li a.active {
     flex: 1;
     max-width: 400px;
     text-align: center;
+    cursor: pointer;
 }
 
 .product-image {
@@ -505,12 +499,7 @@ nav ul li a.active {
     opacity: 0.7;
 }
 
-.product-card {
-    cursor: pointer;
-}
-
 /* --- BUY BUTTON --- */
-/* Couldn't import PayPal due to needing a Social Security Number */
 .buy-btn {
     margin-top: 8px;
     padding: 10px 28px;
@@ -532,7 +521,7 @@ nav ul li a.active {
 /* --- ABOUT CREATOR SECTION --- */
 .creator {
     background-color: var(--viridian);
-    padding: 100px 0;
+    padding: 140px 0 100px 0;
 }
 
 .creator-row {
@@ -557,7 +546,7 @@ nav ul li a.active {
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--white);
-    margin-bottom: 20px;
+    margin-bottom: 32px;
 }
 
 .creator-text p {
@@ -570,7 +559,7 @@ nav ul li a.active {
 /* --- MISSION SECTION --- */
 .mission {
     background-color: var(--viridian);
-    padding: 80px 0 120px 0;
+    padding: 120px 0;
 }
 
 .mission-text {
@@ -601,7 +590,7 @@ nav ul li a.active {
 /* --- FEEDBACK FORM SECTION --- */
 .feedback {
     background-color: var(--viridian);
-    padding: 80px 0 160px 0;  
+    padding: 80px 0 160px 0;
     text-align: center;
 }
 
@@ -658,13 +647,14 @@ nav ul li a.active {
 .custom-carousel {
     position: relative;
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .custom-carousel-track {
     position: relative;
     width: 100%;
     height: 500px;
+    overflow: hidden;
 }
 
 .custom-carousel-slide {
@@ -714,6 +704,7 @@ nav ul li a.active {
     justify-content: center;
     gap: 8px;
     padding: 16px 0 6px 0;
+    background: var(--viridian);
 }
 
 .carousel-dot {
@@ -775,19 +766,18 @@ nav ul li a.active {
 
 .popup-img-prev {
     padding: 4px 12px 14px 12px;
+    left: 0;
 }
 
 .popup-img-next {
     padding: 6px 12px 12px 12px;
+    right: 0;
 }
 
 .popup-img-prev:hover,
 .popup-img-next:hover {
     background: rgba(0, 0, 0, 0.65);
 }
-
-.popup-img-prev { left: 0; }
-.popup-img-next { right: 0; }
 
 .popup-dots {
     display: flex;
@@ -844,7 +834,7 @@ footer p {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 35%;
+        width: 55%;
         height: 100%;
         background: rgba(19, 82, 74, 0.92);
         padding: 100px 30px;
@@ -890,7 +880,12 @@ footer p {
 
     /* --- Page Banner --- */
     .page-banner {
-        height: 30vh;
+        height: calc(30vh + 70px);
+        padding-top: 70px;
+    }
+
+    .page-banner h1 {
+        font-size: 4rem;
     }
 
     /* --- Feature Section --- */
@@ -904,8 +899,25 @@ footer p {
         gap: 30px;
     }
 
+    .feature-image {
+        width: 100%;
+        height: 300px;
+    }
+
     .feature-image img {
         height: 280px;
+    }
+
+    /* --- Carousel --- */
+    .custom-carousel {
+        width: 100%;
+        overflow: visible;
+    }
+
+    .custom-carousel-track {
+        width: 100%;
+        height: 280px;
+        overflow: hidden;
     }
 
     /* --- Products Grid --- */
@@ -967,32 +979,18 @@ footer p {
     .contact-text {
         width: 88%;
     }
-
-    /* --- Carousel --- */
-    .custom-carousel-track {
-        height: 280px;
-    }
-
-    .custom-carousel-slide {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
 }
 
 /* --- TABLET (768px to 1024px) --- */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    /* --- Header --- */
     nav ul {
         gap: 24px;
     }
 
-    /* --- Welcome --- */
     .welcome-text {
         width: 78%;
     }
 
-    /* --- Feature Section --- */
     .feature-row {
         width: 88%;
         gap: 40px;
@@ -1002,7 +1000,6 @@ footer p {
         height: 380px;
     }
 
-    /* --- Products Grid --- */
     .product-grid {
         width: 90%;
         gap: 24px;
@@ -1012,7 +1009,6 @@ footer p {
         height: 300px;
     }
 
-    /* --- Creator Section --- */
     .creator-row {
         width: 85%;
         gap: 40px;
@@ -1023,17 +1019,14 @@ footer p {
         height: 260px;
     }
 
-    /* --- Mission Section --- */
     .mission-text {
         width: 78%;
     }
 
-    /* --- Feedback Form --- */
     .feedback-text {
         width: 70%;
     }
 
-    /* --- Contact --- */
     .contact-text {
         width: 78%;
     }
