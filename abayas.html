@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="icon" type="image/png" href="./img/logo.png" />
+    <title>Abayas | AURA</title>
+  </head>
+  <body>
+
+    <header>
+      <div class="logo">
+        <img src="./img/logo.png" alt="AURA logo" class="logo-img" />
+      </div>
+      <nav>
+        <ul id="menu">
+          <li><a href="./index.html">Welcome</a></li>
+          <li><a href="./hijabs.html">Hijabs</a></li>
+          <li><a href="./shawls.html">Shawls</a></li>
+          <li><a href="./abayas.html" class="active">Abayas</a></li>
+          <li><a href="./dresses.html">Maxi Dresses</a></li>
+          <li><a href="./about.html">About Us</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="cart-toggle" onclick="openCart()" aria-label="Open cart">
+          <span class="material-symbols-outlined">shopping_bag</span>
+          <span class="cart-count">0</span>
+        </button>
+        <span class="hamburger" id="hamburger" onclick="toggleMenu()">&#9776;</span>
+      </div>
+    </header>
+
+    <section class="page-banner">
+      <h1>Abayas</h1>
+      <p class="banner-tagline">Where Modesty meets Elegance</p>
+    </section>
+
+    <section class="feature">
+      <div class="feature-row">
+        <div class="feature-text">
+          <h2>NEWEST EDITIONS</h2>
+          <p>Each abaya is handcrafted with care, tailored to drape beautifully and move with quiet grace.</p>
+        </div>
+        <div class="feature-image">
+          <div class="custom-carousel" id="abaya-carousel">
+            <div class="custom-carousel-track">
+              <img src="./img/temp_hijab_main.jpeg" alt="Featured Abaya" class="custom-carousel-slide active" />
+              <img src="./img/temp_hijab1.jpg" alt="Classic Abaya" class="custom-carousel-slide" />
+              <img src="./img/temp_hijab2.jpg" alt="Embroidered Abaya" class="custom-carousel-slide" />
+              <button class="custom-carousel-prev" onclick="moveCarousel('abaya-carousel', -1)">&#8249;</button>
+              <button class="custom-carousel-next" onclick="moveCarousel('abaya-carousel', 1)">&#8250;</button>
+            </div>
+            <div class="carousel-dots">
+              <span class="carousel-dot active" onclick="goToSlide('abaya-carousel', 0)"></span>
+              <span class="carousel-dot" onclick="goToSlide('abaya-carousel', 1)"></span>
+              <span class="carousel-dot" onclick="goToSlide('abaya-carousel', 2)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products">
+      <h2>ABAYAS</h2>
+      <div class="product-grid">
+
+        <div class="product-card" onclick="openModal('modal-abaya1')">
+          <div class="product-image">
+            <img src="./img/temp_hijab1.jpg" alt="Abaya 1" />
+            <div class="product-overlay">
+              <p class="product-name">Classic Abaya</p>
+              <p class="product-price">$80.00 USD</p>
+              <button class="buy-btn" onclick="addToCart(event, 'Classic Abaya', 80)">Add to Cart</button>
+            </div>
+          </div>
+          <p class="product-name">Classic Abaya</p>
+          <p class="product-price">$80.00 USD</p>
+        </div>
+
+        <div class="product-card" onclick="openModal('modal-abaya2')">
+          <div class="product-image">
+            <img src="./img/temp_hijab2.jpg" alt="Abaya 2" />
+            <div class="product-overlay">
+              <p class="product-name">Embroidered Abaya</p>
+              <p class="product-price">$120.00 USD</p>
+              <button class="buy-btn" onclick="addToCart(event, 'Embroidered Abaya', 120)">Add to Cart</button>
+            </div>
+          </div>
+          <p class="product-name">Embroidered Abaya</p>
+          <p class="product-price">$120.00 USD</p>
+        </div>
+
+        <div class="product-card" onclick="openModal('modal-abaya3')">
+          <div class="product-image">
+            <img src="./img/temp_hijab3.jpg" alt="Abaya 3" />
+            <div class="product-overlay">
+              <p class="product-name">Open-Front Abaya</p>
+              <p class="product-price">$95.00 USD</p>
+              <button class="buy-btn" onclick="addToCart(event, 'Open-Front Abaya', 95)">Add to Cart</button>
+            </div>
+          </div>
+          <p class="product-name">Open-Front Abaya</p>
+          <p class="product-price">$95.00 USD</p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="product-modal" id="modal-abaya1">
+      <div class="popup-box">
+        <button class="modal-close" onclick="closeModal('modal-abaya1')">✕</button>
+        <div class="popup-img-carousel" id="popup-abaya1">
+          <div class="popup-img-track">
+            <img src="./img/temp_hijab1.jpg" alt="Classic Abaya" class="popup-img-slide active" />
+            <img src="./img/temp_hijab1_2.jpeg" alt="Classic Abaya 2" class="popup-img-slide" />
+            <img src="./img/temp_hijab1_3.jpeg" alt="Classic Abaya 3" class="popup-img-slide" />
+          </div>
+          <button class="popup-img-prev" onclick="movePopup('popup-abaya1', -1)">&#8249;</button>
+          <button class="popup-img-next" onclick="movePopup('popup-abaya1', 1)">&#8250;</button>
+          <div class="popup-dots">
+            <span class="popup-dot active" onclick="goToPopupSlide('popup-abaya1', 0)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-abaya1', 1)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-abaya1', 2)"></span>
+          </div>
+        </div>
+        <div class="popup-info">
+          <p class="popup-name">Classic Abaya</p>
+          <p class="popup-desc">A timeless, flowing abaya cut for everyday elegance. Lightweight and breathable, designed to drape effortlessly from shoulder to hem.</p>
+          <p class="popup-price">$80.00 USD</p>
+          <button class="buy-btn" onclick="addToCart(event, 'Classic Abaya', 80)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-modal" id="modal-abaya2">
+      <div class="popup-box">
+        <button class="modal-close" onclick="closeModal('modal-abaya2')">✕</button>
+        <div class="popup-img-carousel" id="popup-abaya2">
+          <div class="popup-img-track">
+            <img src="./img/temp_hijab2.jpg" alt="Embroidered Abaya" class="popup-img-slide active" />
+            <img src="./img/temp_hijab2_2.jpeg" alt="Embroidered Abaya 2" class="popup-img-slide" />
+            <img src="./img/temp_hijab2_3.jpeg" alt="Embroidered Abaya 3" class="popup-img-slide" />
+          </div>
+          <button class="popup-img-prev" onclick="movePopup('popup-abaya2', -1)">&#8249;</button>
+          <button class="popup-img-next" onclick="movePopup('popup-abaya2', 1)">&#8250;</button>
+          <div class="popup-dots">
+            <span class="popup-dot active" onclick="goToPopupSlide('popup-abaya2', 0)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-abaya2', 1)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-abaya2', 2)"></span>
+          </div>
+        </div>
+        <div class="popup-info">
+          <p class="popup-name">Embroidered Abaya</p>
+          <p class="popup-desc">A statement abaya adorned with delicate hand embroidery. Crafted for occasions that call for a little extra grace and detail.</p>
+          <p class="popup-price">$120.00 USD</p>
+          <button class="buy-btn" onclick="addToCart(event, 'Embroidered Abaya', 120)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-modal" id="modal-abaya3">
+      <div class="popup-box">
+        <button class="modal-close" onclick="closeModal('modal-abaya3')">✕</button>
+        <div class="popup-img-carousel" id="popup-abaya3">
+          <div class="popup-img-track">
+            <img src="./img/temp_hijab3.jpg" alt="Open-Front Abaya" class="popup-img-slide active" />
+            <img src="./img/temp_hijab3_2.jpeg" alt="Open-Front Abaya 2" class="popup-img-slide" />
+            <img src="./img/temp_hijab3_3.jpeg" alt="Open-Front Abaya 3" class="popup-img-slide" />
+          </div>
+          <button class="popup-img-prev" onclick="movePopup('popup-abaya3', -1)">&#8249;</button>
+          <button class="popup-img-next" onclick="movePopup('popup-abaya3', 1)">&#8250;</button>
+          <div class="popup-dots">
+            <span class="popup-dot active" onclick="goToPopupSlide('popup-abaya3', 0)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-abaya3', 1)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-abaya3', 2)"></span>
+          </div>
+        </div>
+        <div class="popup-info">
+          <p class="popup-name">Open-Front Abaya</p>
+          <p class="popup-desc">A versatile open-front abaya made to layer over any outfit. Effortless, elegant, and endlessly wearable.</p>
+          <p class="popup-price">$95.00 USD</p>
+          <button class="buy-btn" onclick="addToCart(event, 'Open-Front Abaya', 95)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="contact">
+      <div class="contact-text">
+        <h2>CONTACT US</h2>
+        <div class="contact-links">
+          <a href="https://www.instagram.com/aurabynisha/">Instagram</a>
+          <span>|</span>
+          <a href="mailto:aurabynisha05@gmail.com">Email</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>©2025 AURA by Nisha. Designed by Melody Chui.</p>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

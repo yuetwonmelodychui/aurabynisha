@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="icon" type="image/png" href="./img/logo.png" />
+    <title>Maxi Dresses | AURA</title>
+  </head>
+  <body>
+
+    <header>
+      <div class="logo">
+        <img src="./img/logo.png" alt="AURA logo" class="logo-img" />
+      </div>
+      <nav>
+        <ul id="menu">
+          <li><a href="./index.html">Welcome</a></li>
+          <li><a href="./hijabs.html">Hijabs</a></li>
+          <li><a href="./shawls.html">Shawls</a></li>
+          <li><a href="./abayas.html">Abayas</a></li>
+          <li><a href="./dresses.html" class="active">Maxi Dresses</a></li>
+          <li><a href="./about.html">About Us</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="cart-toggle" onclick="openCart()" aria-label="Open cart">
+          <span class="material-symbols-outlined">shopping_bag</span>
+          <span class="cart-count">0</span>
+        </button>
+        <span class="hamburger" id="hamburger" onclick="toggleMenu()">&#9776;</span>
+      </div>
+    </header>
+
+    <section class="page-banner">
+      <h1>Maxi Dresses</h1>
+      <p class="banner-tagline">Designed for moments that matter.</p>
+    </section>
+
+    <section class="feature">
+      <div class="feature-row">
+        <div class="feature-text">
+          <h2>NEWEST EDITIONS</h2>
+          <p>Each maxi dress is handcrafted with care, designed to flow gracefully and feel luxurious against the skin.</p>
+        </div>
+        <div class="feature-image">
+          <div class="custom-carousel" id="dress-carousel">
+            <div class="custom-carousel-track">
+              <img src="./img/temp_shawl1.jpeg" alt="Featured Maxi Dress" class="custom-carousel-slide active" />
+              <img src="./img/temp_shawl2.jpg" alt="Flowy Maxi Dress" class="custom-carousel-slide" />
+              <img src="./img/temp_shawl3.jpg" alt="Satin Maxi Dress" class="custom-carousel-slide" />
+              <button class="custom-carousel-prev" onclick="moveCarousel('dress-carousel', -1)">&#8249;</button>
+              <button class="custom-carousel-next" onclick="moveCarousel('dress-carousel', 1)">&#8250;</button>
+            </div>
+            <div class="carousel-dots">
+              <span class="carousel-dot active" onclick="goToSlide('dress-carousel', 0)"></span>
+              <span class="carousel-dot" onclick="goToSlide('dress-carousel', 1)"></span>
+              <span class="carousel-dot" onclick="goToSlide('dress-carousel', 2)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products">
+      <h2>MAXI DRESSES</h2>
+      <div class="product-grid">
+
+        <div class="product-card" onclick="openModal('modal-dress1')">
+          <div class="product-image">
+            <img src="./img/temp_shawl2.jpg" alt="Maxi Dress 1" />
+            <div class="product-overlay">
+              <p class="product-name">Flowy Maxi Dress</p>
+              <p class="product-price">$70.00 USD</p>
+              <button class="buy-btn" onclick="addToCart(event, 'Flowy Maxi Dress', 70)">Add to Cart</button>
+            </div>
+          </div>
+          <p class="product-name">Flowy Maxi Dress</p>
+          <p class="product-price">$70.00 USD</p>
+        </div>
+
+        <div class="product-card" onclick="openModal('modal-dress2')">
+          <div class="product-image">
+            <img src="./img/temp_shawl1.jpeg" alt="Maxi Dress 2" />
+            <div class="product-overlay">
+              <p class="product-name">Satin Maxi Dress</p>
+              <p class="product-price">$90.00 USD</p>
+              <button class="buy-btn" onclick="addToCart(event, 'Satin Maxi Dress', 90)">Add to Cart</button>
+            </div>
+          </div>
+          <p class="product-name">Satin Maxi Dress</p>
+          <p class="product-price">$90.00 USD</p>
+        </div>
+
+        <div class="product-card" onclick="openModal('modal-dress3')">
+          <div class="product-image">
+            <img src="./img/temp_shawl3.jpg" alt="Maxi Dress 3" />
+            <div class="product-overlay">
+              <p class="product-name">Evening Maxi Dress</p>
+              <p class="product-price">$110.00 USD</p>
+              <button class="buy-btn" onclick="addToCart(event, 'Evening Maxi Dress', 110)">Add to Cart</button>
+            </div>
+          </div>
+          <p class="product-name">Evening Maxi Dress</p>
+          <p class="product-price">$110.00 USD</p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="product-modal" id="modal-dress1">
+      <div class="popup-box">
+        <button class="modal-close" onclick="closeModal('modal-dress1')">✕</button>
+        <div class="popup-img-carousel" id="popup-dress1">
+          <div class="popup-img-track">
+            <img src="./img/temp_shawl2.jpg" alt="Flowy Maxi Dress" class="popup-img-slide active" />
+            <img src="./img/temp_shawl2_2.jpg" alt="Flowy Maxi Dress 2" class="popup-img-slide" />
+            <img src="./img/temp_shawl2_3.jpeg" alt="Flowy Maxi Dress 3" class="popup-img-slide" />
+          </div>
+          <button class="popup-img-prev" onclick="movePopup('popup-dress1', -1)">&#8249;</button>
+          <button class="popup-img-next" onclick="movePopup('popup-dress1', 1)">&#8250;</button>
+          <div class="popup-dots">
+            <span class="popup-dot active" onclick="goToPopupSlide('popup-dress1', 0)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-dress1', 1)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-dress1', 2)"></span>
+          </div>
+        </div>
+        <div class="popup-info">
+          <p class="popup-name">Flowy Maxi Dress</p>
+          <p class="popup-desc">A soft, flowing maxi dress made for easy everyday elegance. Lightweight fabric that moves beautifully with you.</p>
+          <p class="popup-price">$70.00 USD</p>
+          <button class="buy-btn" onclick="addToCart(event, 'Flowy Maxi Dress', 70)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-modal" id="modal-dress2">
+      <div class="popup-box">
+        <button class="modal-close" onclick="closeModal('modal-dress2')">✕</button>
+        <div class="popup-img-carousel" id="popup-dress2">
+          <div class="popup-img-track">
+            <img src="./img/temp_shawl1.jpeg" alt="Satin Maxi Dress" class="popup-img-slide active" />
+            <img src="./img/temp_shawl1_2.jpg" alt="Satin Maxi Dress 2" class="popup-img-slide" />
+            <img src="./img/temp_shawl1_3.jpeg" alt="Satin Maxi Dress 3" class="popup-img-slide" />
+          </div>
+          <button class="popup-img-prev" onclick="movePopup('popup-dress2', -1)">&#8249;</button>
+          <button class="popup-img-next" onclick="movePopup('popup-dress2', 1)">&#8250;</button>
+          <div class="popup-dots">
+            <span class="popup-dot active" onclick="goToPopupSlide('popup-dress2', 0)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-dress2', 1)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-dress2', 2)"></span>
+          </div>
+        </div>
+        <div class="popup-info">
+          <p class="popup-name">Satin Maxi Dress</p>
+          <p class="popup-desc">A refined satin maxi with a gentle sheen and graceful drape. Effortlessly elevated for special occasions.</p>
+          <p class="popup-price">$90.00 USD</p>
+          <button class="buy-btn" onclick="addToCart(event, 'Satin Maxi Dress', 90)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-modal" id="modal-dress3">
+      <div class="popup-box">
+        <button class="modal-close" onclick="closeModal('modal-dress3')">✕</button>
+        <div class="popup-img-carousel" id="popup-dress3">
+          <div class="popup-img-track">
+            <img src="./img/temp_shawl3.jpg" alt="Evening Maxi Dress" class="popup-img-slide active" />
+            <img src="./img/temp_shawl2_2.jpg" alt="Evening Maxi Dress 2" class="popup-img-slide" />
+            <img src="./img/temp_shawl1_3.jpeg" alt="Evening Maxi Dress 3" class="popup-img-slide" />
+          </div>
+          <button class="popup-img-prev" onclick="movePopup('popup-dress3', -1)">&#8249;</button>
+          <button class="popup-img-next" onclick="movePopup('popup-dress3', 1)">&#8250;</button>
+          <div class="popup-dots">
+            <span class="popup-dot active" onclick="goToPopupSlide('popup-dress3', 0)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-dress3', 1)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-dress3', 2)"></span>
+          </div>
+        </div>
+        <div class="popup-info">
+          <p class="popup-name">Evening Maxi Dress</p>
+          <p class="popup-desc">A statement maxi dress designed for life's most meaningful moments. Elegant, timeless, and made to be remembered.</p>
+          <p class="popup-price">$110.00 USD</p>
+          <button class="buy-btn" onclick="addToCart(event, 'Evening Maxi Dress', 110)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="contact">
+      <div class="contact-text">
+        <h2>CONTACT US</h2>
+        <div class="contact-links">
+          <a href="https://www.instagram.com/aurabynisha/">Instagram</a>
+          <span>|</span>
+          <a href="mailto:aurabynisha05@gmail.com">Email</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>©2025 AURA by Nisha. Designed by Melody Chui.</p>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

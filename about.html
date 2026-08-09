@@ -12,19 +12,25 @@
 
     <header>
       <div class="logo">
-        <img src="./img/logo.PNG" alt="AURA logo" class="logo-img" />
-        <span>AURA</span>
+        <img src="./img/logo.png" alt="AURA logo" class="logo-img" />
       </div>
       <nav>
         <ul id="menu">
           <li><a href="./index.html">Welcome</a></li>
           <li><a href="./hijabs.html">Hijabs</a></li>
           <li><a href="./shawls.html">Shawls</a></li>
+          <li><a href="./abayas.html">Abayas</a></li>
+          <li><a href="./dresses.html">Maxi Dresses</a></li>
           <li><a href="./about.html" class="active">About Us</a></li>
         </ul>
       </nav>
-
-      <span class="hamburger" id="hamburger" onclick="toggleMenu()">⋮</span>
+      <div class="header-actions">
+        <button class="cart-toggle" onclick="openCart()" aria-label="Open cart">
+          <span class="material-symbols-outlined">shopping_bag</span>
+          <span class="cart-count">0</span>
+        </button>
+        <span class="hamburger" id="hamburger" onclick="toggleMenu()">&#9776;</span>
+      </div>
     </header>
 
     <section class="page-banner about-banner">
@@ -44,22 +50,9 @@
     <section class="mission">
       <div class="mission-text">
         <h2>Mission Statement</h2>
-        <p>At AURA, every piece tells a story. Our hijabs and shawls are 100% original designs — no mass production, no shortcuts. Each one is thoughtfully handcrafted by skilled women artisans in Pakistan, who bring generations of textile tradition into every stitch, fold, and finish.</p>
-        <p>We are committed to sustainability. Our fabrics are sourced responsibly, our process is slow and intentional, and our packaging is designed with the earth in mind. We believe that fashion can be both beautiful and conscious — and that the two should never have to compete.</p>
-        <p>Behind every piece is a woman who made it with her hands, and a woman who will wear it with pride. AURA exists to honour both. When you choose AURA, you are not just buying a product — you are supporting independent craftsmanship, empowering women, and carrying a piece of something real.</p>
-      </div>
-    </section>
-
-    <section class="feedback">
-      <div class="feedback-text">
-        <h2>Share Your Feedback</h2>
-        <p>We'd love to hear from you. Let us know what you think!</p>
-        <form action="https://formspree.io/f/mjgljvzd" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea name="message" placeholder="Your feedback..." rows="5" required></textarea>
-          <button type="submit" class="buy-btn">Submit</button>
-        </form>
+        <p>At AURA, every piece is created in small batches with thoughtful attention to detail. We believe in craftsmanship over mass production, creating timeless hijabs, shawls, dresses, and abayas that celebrate quality, authenticity, and heritage.</p>
+        <p>By carefully sourcing our fabrics and producing in limited quantities, we focus on quality, longevity, and timeless design. Every piece is thoughtfully crafted by skilled independent artisans in Pakistan.</p>
+        <p>When you choose AURA, you are choosing thoughtful craftsmanship, supporting independent artisans, creating opportunities for women, and carrying a piece of heritage with you, whether for everyday moments or life's most meaningful occasions.</p>
       </div>
     </section>
 
@@ -78,20 +71,6 @@
       <p>©2025 AURA by Nisha. Designed by Melody Chui.</p>
     </footer>
 
-    <script>
-      // --- Hamburger Menu Section ---
-      function toggleMenu() {
-        const menu = document.getElementById('menu');
-        menu.classList.toggle('show');
-      }
-
-      document.addEventListener('click', function (e) {
-        const menu = document.getElementById('menu');
-        const hamburger = document.getElementById('hamburger');
-        if (menu.classList.contains('show') && !menu.contains(e.target) && e.target !== hamburger) {
-          menu.classList.remove('show');
-        }
-      });
-    </script>
+    <script src="./app.js"></script>
   </body>
 </html>

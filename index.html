@@ -12,19 +12,25 @@
   <body>
     <header>
       <div class="logo">
-        <img src="./img/logo.PNG" alt="AURA logo" class="logo-img" />
-        <span>AURA</span>
+        <img src="./img/logo.png" alt="AURA logo" class="logo-img" />
       </div>
       <nav>
         <ul id="menu">
           <li><a href="./index.html" class="active">Welcome</a></li>
           <li><a href="./hijabs.html">Hijabs</a></li>
           <li><a href="./shawls.html">Shawls</a></li>
+          <li><a href="./abayas.html">Abayas</a></li>
+          <li><a href="./dresses.html">Maxi Dresses</a></li>
           <li><a href="./about.html">About Us</a></li>
         </ul>
       </nav>
-
-      <span class="hamburger" id="hamburger" onclick="toggleMenu()">⋮</span>
+      <div class="header-actions">
+        <button class="cart-toggle" onclick="openCart()" aria-label="Open cart">
+          <span class="material-symbols-outlined">shopping_bag</span>
+          <span class="cart-count">0</span>
+        </button>
+        <span class="hamburger" id="hamburger" onclick="toggleMenu()">&#9776;</span>
+      </div>
     </header>
 
     <section class="hero">
@@ -41,9 +47,9 @@
     <section class="welcome">
       <div class="welcome-text">
         <p class="welcome-tagline">Aura is more than a brand. It's a feeling.</p>
+        <p>With Aura, we hope to create pieces that don't just complete an outfit, but empower the woman wearing them. Pieces that remind you that your presence matters, your identity is beautiful, and your aura deserves to shine.</p>
         <p>Aura is about bringing beauty, confidence, and identity to every woman. It's not limited to one group or one story — it celebrates all women, their individuality, their strength, and their presence. Each piece is thoughtfully handmade in Pakistan, crafted with care by woman artisans and rooted in where we come from. Every fabric carries a story of tradition, culture, and craftsmanship.</p>
         <p>The word Aura represents the energy that surrounds a person, something powerful, unique, unseen but deeply felt. It's the quiet confidence you carry, the way you express yourself, and the identity you choose to embrace.</p>
-        <p>With Aura, we hope to create pieces that don't just complete an outfit, but empower the woman wearing them. Pieces that remind you that your presence matters, your identity is beautiful, and your aura deserves to shine.</p>
       </div>
     </section>
 
@@ -62,31 +68,6 @@
       <p>©2025 AURA by Nisha. Designed by Melody Chui.</p>
     </footer>
 
-    <script>
-      // --- Bouncing Arrow Section ---
-      document.getElementById('scroll-arrow').addEventListener('click', function () {
-        window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
-      });
-
-      window.addEventListener('scroll', function () {
-        const arrow = document.getElementById('scroll-arrow');
-        const nearBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 100;
-        arrow.style.opacity = nearBottom ? '0' : '0.75';
-      });
-
-      // --- Hamburger Menu Section ---
-      function toggleMenu() {
-        const menu = document.getElementById('menu');
-        menu.classList.toggle('show');
-      }
-
-      document.addEventListener('click', function (e) {
-        const menu = document.getElementById('menu');
-        const hamburger = document.getElementById('hamburger');
-        if (menu.classList.contains('show') && !menu.contains(e.target) && e.target !== hamburger) {
-          menu.classList.remove('show');
-        }
-      });
-    </script>
+    <script src="./app.js"></script>
   </body>
 </html>

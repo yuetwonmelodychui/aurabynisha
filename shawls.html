@@ -12,22 +12,30 @@
 
     <header>
       <div class="logo">
-        <img src="./img/logo.PNG" alt="AURA logo" class="logo-img" />
-        <span>AURA</span>
+        <img src="./img/logo.png" alt="AURA logo" class="logo-img" />
       </div>
       <nav>
         <ul id="menu">
           <li><a href="./index.html">Welcome</a></li>
           <li><a href="./hijabs.html">Hijabs</a></li>
           <li><a href="./shawls.html" class="active">Shawls</a></li>
+          <li><a href="./abayas.html">Abayas</a></li>
+          <li><a href="./dresses.html">Maxi Dresses</a></li>
           <li><a href="./about.html">About Us</a></li>
         </ul>
       </nav>
-      <span class="hamburger" id="hamburger" onclick="toggleMenu()">⋮</span>
+      <div class="header-actions">
+        <button class="cart-toggle" onclick="openCart()" aria-label="Open cart">
+          <span class="material-symbols-outlined">shopping_bag</span>
+          <span class="cart-count">0</span>
+        </button>
+        <span class="hamburger" id="hamburger" onclick="toggleMenu()">&#9776;</span>
+      </div>
     </header>
 
     <section class="page-banner">
       <h1>Shawls</h1>
+      <p class="banner-tagline">A Reflection of Pakistani Heritage</p>
     </section>
 
     <section class="feature">
@@ -65,7 +73,7 @@
             <div class="product-overlay">
               <p class="product-name">Desert Shawl</p>
               <p class="product-price">$10.00 USD</p>
-              <button class="buy-btn">Buy Now</button>
+              <button class="buy-btn" onclick="addToCart(event, 'Desert Shawl', 10)">Add to Cart</button>
             </div>
           </div>
           <p class="product-name">Desert Shawl</p>
@@ -78,7 +86,7 @@
             <div class="product-overlay">
               <p class="product-name">Grace Shawl</p>
               <p class="product-price">$20.00 USD</p>
-              <button class="buy-btn">Buy Now</button>
+              <button class="buy-btn" onclick="addToCart(event, 'Grace Shawl', 20)">Add to Cart</button>
             </div>
           </div>
           <p class="product-name">Grace Shawl</p>
@@ -109,7 +117,7 @@
           <p class="popup-name">Desert Shawl</p>
           <p class="popup-desc">A warm, earthy-toned shawl inspired by the textures of the desert. Lightweight yet cozy, perfect for layering in any season.</p>
           <p class="popup-price">$10.00 USD</p>
-          <button class="buy-btn">Buy Now</button>
+          <button class="buy-btn" onclick="addToCart(event, 'Desert Shawl', 10)">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -135,7 +143,7 @@
           <p class="popup-name">Grace Shawl</p>
           <p class="popup-desc">An elegant, flowing shawl with a graceful drape. Handwoven with care and designed to complement any outfit with quiet sophistication.</p>
           <p class="popup-price">$20.00 USD</p>
-          <button class="buy-btn">Buy Now</button>
+          <button class="buy-btn" onclick="addToCart(event, 'Grace Shawl', 20)">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -155,75 +163,6 @@
       <p>©2025 AURA by Nisha. Designed by Melody Chui.</p>
     </footer>
 
-    <script>
-      function moveCarousel(id, dir) {
-        const carousel = document.getElementById(id);
-        const slides = carousel.querySelectorAll('.custom-carousel-slide');
-        const dots = carousel.querySelectorAll('.carousel-dot');
-        let current = Array.from(slides).findIndex(s => s.classList.contains('active'));
-        slides[current].classList.remove('active');
-        if (dots.length) dots[current].classList.remove('active');
-        current = (current + dir + slides.length) % slides.length;
-        slides[current].classList.add('active');
-        if (dots.length) dots[current].classList.add('active');
-      }
-
-      function goToSlide(id, index) {
-        const carousel = document.getElementById(id);
-        const slides = carousel.querySelectorAll('.custom-carousel-slide');
-        const dots = carousel.querySelectorAll('.carousel-dot');
-        slides.forEach((s, i) => { s.classList.toggle('active', i === index); });
-        dots.forEach((d, i) => { d.classList.toggle('active', i === index); });
-      }
-
-      setInterval(() => moveCarousel('shawl-carousel', 1), 3000);
-
-      function movePopup(id, dir) {
-        const carousel = document.getElementById(id);
-        const slides = carousel.querySelectorAll('.popup-img-slide');
-        const dots = carousel.querySelectorAll('.popup-dot');
-        let current = Array.from(slides).findIndex(s => s.classList.contains('active'));
-        slides[current].classList.remove('active');
-        if (dots.length) dots[current].classList.remove('active');
-        current = (current + dir + slides.length) % slides.length;
-        slides[current].classList.add('active');
-        if (dots.length) dots[current].classList.add('active');
-      }
-
-      function goToPopupSlide(id, index) {
-        const carousel = document.getElementById(id);
-        const slides = carousel.querySelectorAll('.popup-img-slide');
-        const dots = carousel.querySelectorAll('.popup-dot');
-        slides.forEach((s, i) => { s.classList.toggle('active', i === index); });
-        dots.forEach((d, i) => { d.classList.toggle('active', i === index); });
-      }
-
-      function openModal(id) {
-        document.getElementById(id).style.display = 'flex';
-      }
-
-      function closeModal(id) {
-        document.getElementById(id).style.display = 'none';
-      }
-
-      document.querySelectorAll('.product-modal').forEach(function (modal) {
-        modal.addEventListener('click', function (e) {
-          if (e.target === modal) modal.style.display = 'none';
-        });
-      });
-
-      function toggleMenu() {
-        const menu = document.getElementById('menu');
-        menu.classList.toggle('show');
-      }
-
-      document.addEventListener('click', function (e) {
-        const menu = document.getElementById('menu');
-        const hamburger = document.getElementById('hamburger');
-        if (menu.classList.contains('show') && !menu.contains(e.target) && e.target !== hamburger) {
-          menu.classList.remove('show');
-        }
-      });
-    </script>
+    <script src="./app.js"></script>
   </body>
 </html>
