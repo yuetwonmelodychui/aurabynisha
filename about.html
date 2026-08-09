@@ -56,6 +56,20 @@
       </div>
     </section>
 
+    <section class="feedback">
+      <div class="feedback-text">
+        <h2>Share Your Feedback</h2>
+        <p>We'd love to hear from you. Let us know what you think!</p>
+        <form id="feedback-form" onsubmit="submitFeedback(event)">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" placeholder="Your feedback..." rows="5" required></textarea>
+          <button type="submit" class="buy-btn">Submit</button>
+        </form>
+        <p id="feedback-thanks" class="feedback-thanks">Thank you for your feedback ♡</p>
+      </div>
+    </section>
+
     <section class="contact">
       <div class="contact-text">
         <h2>CONTACT US</h2>

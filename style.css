@@ -643,6 +643,14 @@ nav ul li a.active {
     resize: vertical;
 }
 
+.feedback-thanks {
+    display: none;
+    font-family: var(--font-content);
+    font-size: 1.05rem;
+    color: var(--white);
+    padding: 20px 0;
+}
+
 /* --- CUSTOM CAROUSEL --- */
 .custom-carousel {
     position: relative;

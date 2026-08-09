@@ -222,6 +222,17 @@ function submitSignup(event) {
   sessionStorage.setItem('aura_signup_seen', '1');
 }
 
+/* Feedback form — no backend yet; shows a thank-you message on submit.
+   Wire this to a form service (Formspree, etc.) later if you want the
+   messages emailed to you. */
+function submitFeedback(event) {
+  event.preventDefault();
+  const form = document.getElementById('feedback-form');
+  const thanks = document.getElementById('feedback-thanks');
+  if (form) form.style.display = 'none';
+  if (thanks) thanks.style.display = 'block';
+}
+
 function maybeShowSignup() {
   if (sessionStorage.getItem('aura_signup_seen')) return;
   setTimeout(() => {
