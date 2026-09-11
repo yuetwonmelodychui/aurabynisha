@@ -73,14 +73,35 @@ function goToPopupSlide(id, index) {
 /* =========================================================
    PRODUCT MODALS
    ========================================================= */
+let popupAutoTimer = null;
+
+function startPopupAutoRotate(modalEl) {
+  stopPopupAutoRotate();
+  const carousel = modalEl.querySelector('.popup-img-carousel');
+  if (!carousel || !carousel.id) return;
+  const slides = carousel.querySelectorAll('.popup-img-slide');
+  if (slides.length < 2) return; // nothing to rotate through
+  popupAutoTimer = setInterval(() => movePopup(carousel.id, 1), 2000);
+}
+
+function stopPopupAutoRotate() {
+  if (popupAutoTimer) {
+    clearInterval(popupAutoTimer);
+    popupAutoTimer = null;
+  }
+}
+
 function openModal(id) {
   const el = document.getElementById(id);
-  if (el) el.style.display = 'flex';
+  if (!el) return;
+  el.style.display = 'flex';
+  startPopupAutoRotate(el); // auto-advance the popup images every 2s
 }
 
 function closeModal(id) {
   const el = document.getElementById(id);
   if (el) el.style.display = 'none';
+  stopPopupAutoRotate();
 }
 
 /* =========================================================
@@ -332,7 +353,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // Close product modals when clicking the backdrop
   document.querySelectorAll('.product-modal').forEach(function (modal) {
     modal.addEventListener('click', function (e) {
-      if (e.target === modal) modal.style.display = 'none';
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        stopPopupAutoRotate();
+      }
     });
   });
 

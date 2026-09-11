@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="./style.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    <link rel="icon" type="image/png" href="./img/logo.png" />
+    <link rel="icon" href="./favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
+    <link rel="apple-touch-icon" href="./img/apple-touch-icon.png" />
     <title>Maxi Dresses | AURA</title>
   </head>
   <body>
 
     <header>
       <div class="logo">
-        <img src="./img/logo.png" alt="AURA logo" class="logo-img" />
+        <img src="./img/logo.jpeg" alt="AURA logo" class="logo-img" />
       </div>
       <nav>
         <ul id="menu">
@@ -47,9 +49,10 @@
         <div class="feature-image">
           <div class="custom-carousel" id="dress-carousel">
             <div class="custom-carousel-track">
-              <img src="./img/temp_shawl1.jpeg" alt="Featured Maxi Dress" class="custom-carousel-slide active" />
-              <img src="./img/temp_shawl2.jpg" alt="Flowy Maxi Dress" class="custom-carousel-slide" />
-              <img src="./img/temp_shawl3.jpg" alt="Satin Maxi Dress" class="custom-carousel-slide" />
+              <img src="./img/Dresses/Kashish_1.jpeg" alt="Kashish Maxi Dress" class="custom-carousel-slide active" />
+              <img src="./img/Dresses/Rose_1.jpeg" alt="Rosé Maxi Dress" class="custom-carousel-slide" />
+              <img src="./img/Dresses/Gulbahar_1.jpeg" alt="Gulbahar Maxi Dress" class="custom-carousel-slide" />
+              <img src="./img/Dresses/Sapphire_1.jpeg" alt="Sapphire Maxi Dress" class="custom-carousel-slide" />
               <button class="custom-carousel-prev" onclick="moveCarousel('dress-carousel', -1)">&#8249;</button>
               <button class="custom-carousel-next" onclick="moveCarousel('dress-carousel', 1)">&#8250;</button>
             </div>
@@ -57,6 +60,7 @@
               <span class="carousel-dot active" onclick="goToSlide('dress-carousel', 0)"></span>
               <span class="carousel-dot" onclick="goToSlide('dress-carousel', 1)"></span>
               <span class="carousel-dot" onclick="goToSlide('dress-carousel', 2)"></span>
+              <span class="carousel-dot" onclick="goToSlide('dress-carousel', 3)"></span>
             </div>
           </div>
         </div>
@@ -64,46 +68,58 @@
     </section>
 
     <section class="products">
-      <h2>MAXI DRESSES</h2>
-      <div class="product-grid">
+      <div class="product-grid grid-2x2">
 
         <div class="product-card" onclick="openModal('modal-dress1')">
           <div class="product-image">
-            <img src="./img/temp_shawl2.jpg" alt="Maxi Dress 1" />
+            <img src="./img/Dresses/Kashish_1.jpeg" alt="Kashish Maxi Dress" />
             <div class="product-overlay">
-              <p class="product-name">Flowy Maxi Dress</p>
-              <p class="product-price">$70.00 USD</p>
-              <button class="buy-btn" onclick="addToCart(event, 'Flowy Maxi Dress', 70)">Add to Cart</button>
+              <p class="product-name">Kashish</p>
+              <p class="product-price">$119.00 USD</p>
+              <button class="buy-btn" onclick="addToCart(event, 'Kashish', 119)">Add to Cart</button>
             </div>
           </div>
-          <p class="product-name">Flowy Maxi Dress</p>
-          <p class="product-price">$70.00 USD</p>
+          <p class="product-name">Kashish</p>
+          <p class="product-price">$119.00 USD</p>
         </div>
 
         <div class="product-card" onclick="openModal('modal-dress2')">
           <div class="product-image">
-            <img src="./img/temp_shawl1.jpeg" alt="Maxi Dress 2" />
+            <img src="./img/Dresses/Rose_1.jpeg" alt="Rosé Maxi Dress" />
             <div class="product-overlay">
-              <p class="product-name">Satin Maxi Dress</p>
-              <p class="product-price">$90.00 USD</p>
-              <button class="buy-btn" onclick="addToCart(event, 'Satin Maxi Dress', 90)">Add to Cart</button>
+              <p class="product-name">Rosé</p>
+              <p class="product-price">$109.00 USD</p>
+              <button class="buy-btn" onclick="addToCart(event, 'Rosé', 109)">Add to Cart</button>
             </div>
           </div>
-          <p class="product-name">Satin Maxi Dress</p>
-          <p class="product-price">$90.00 USD</p>
+          <p class="product-name">Rosé</p>
+          <p class="product-price">$109.00 USD</p>
         </div>
 
         <div class="product-card" onclick="openModal('modal-dress3')">
           <div class="product-image">
-            <img src="./img/temp_shawl3.jpg" alt="Maxi Dress 3" />
+            <img src="./img/Dresses/Gulbahar_1.jpeg" alt="Gulbahar Maxi Dress" />
             <div class="product-overlay">
-              <p class="product-name">Evening Maxi Dress</p>
-              <p class="product-price">$110.00 USD</p>
-              <button class="buy-btn" onclick="addToCart(event, 'Evening Maxi Dress', 110)">Add to Cart</button>
+              <p class="product-name">Gulbahar</p>
+              <p class="product-price">$119.00 USD</p>
+              <button class="buy-btn" onclick="addToCart(event, 'Gulbahar', 119)">Add to Cart</button>
             </div>
           </div>
-          <p class="product-name">Evening Maxi Dress</p>
-          <p class="product-price">$110.00 USD</p>
+          <p class="product-name">Gulbahar</p>
+          <p class="product-price">$119.00 USD</p>
+        </div>
+
+        <div class="product-card" onclick="openModal('modal-dress4')">
+          <div class="product-image">
+            <img src="./img/Dresses/Sapphire_1.jpeg" alt="Sapphire Maxi Dress" />
+            <div class="product-overlay">
+              <p class="product-name">Sapphire</p>
+              <p class="product-price">$89.00 USD</p>
+              <button class="buy-btn" onclick="addToCart(event, 'Sapphire', 89)">Add to Cart</button>
+            </div>
+          </div>
+          <p class="product-name">Sapphire</p>
+          <p class="product-price">$89.00 USD</p>
         </div>
 
       </div>
@@ -114,9 +130,11 @@
         <button class="modal-close" onclick="closeModal('modal-dress1')">✕</button>
         <div class="popup-img-carousel" id="popup-dress1">
           <div class="popup-img-track">
-            <img src="./img/temp_shawl2.jpg" alt="Flowy Maxi Dress" class="popup-img-slide active" />
-            <img src="./img/temp_shawl2_2.jpg" alt="Flowy Maxi Dress 2" class="popup-img-slide" />
-            <img src="./img/temp_shawl2_3.jpeg" alt="Flowy Maxi Dress 3" class="popup-img-slide" />
+            <img src="./img/Dresses/Kashish_1.jpeg" alt="Kashish 1" class="popup-img-slide active" />
+            <img src="./img/Dresses/Kashish_2.jpeg" alt="Kashish 2" class="popup-img-slide" />
+            <img src="./img/Dresses/Kashish_3.jpeg" alt="Kashish 3" class="popup-img-slide" />
+            <img src="./img/Dresses/Kashish_4.jpeg" alt="Kashish 4" class="popup-img-slide" />
+            <img src="./img/Dresses/Kashish_5.jpeg" alt="Kashish 5" class="popup-img-slide" />
           </div>
           <button class="popup-img-prev" onclick="movePopup('popup-dress1', -1)">&#8249;</button>
           <button class="popup-img-next" onclick="movePopup('popup-dress1', 1)">&#8250;</button>
@@ -124,13 +142,14 @@
             <span class="popup-dot active" onclick="goToPopupSlide('popup-dress1', 0)"></span>
             <span class="popup-dot" onclick="goToPopupSlide('popup-dress1', 1)"></span>
             <span class="popup-dot" onclick="goToPopupSlide('popup-dress1', 2)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-dress1', 3)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-dress1', 4)"></span>
           </div>
         </div>
         <div class="popup-info">
-          <p class="popup-name">Flowy Maxi Dress</p>
-          <p class="popup-desc">A soft, flowing maxi dress made for easy everyday elegance. Lightweight fabric that moves beautifully with you.</p>
-          <p class="popup-price">$70.00 USD</p>
-          <button class="buy-btn" onclick="addToCart(event, 'Flowy Maxi Dress', 70)">Add to Cart</button>
+          <p class="popup-name">Kashish</p>
+          <p class="popup-price">$119.00 USD</p>
+          <button class="buy-btn" onclick="addToCart(event, 'Kashish', 119)">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -140,9 +159,11 @@
         <button class="modal-close" onclick="closeModal('modal-dress2')">✕</button>
         <div class="popup-img-carousel" id="popup-dress2">
           <div class="popup-img-track">
-            <img src="./img/temp_shawl1.jpeg" alt="Satin Maxi Dress" class="popup-img-slide active" />
-            <img src="./img/temp_shawl1_2.jpg" alt="Satin Maxi Dress 2" class="popup-img-slide" />
-            <img src="./img/temp_shawl1_3.jpeg" alt="Satin Maxi Dress 3" class="popup-img-slide" />
+            <img src="./img/Dresses/Rose_1.jpeg" alt="Rosé 1" class="popup-img-slide active" />
+            <img src="./img/Dresses/Rose_2.jpeg" alt="Rosé 2" class="popup-img-slide" />
+            <img src="./img/Dresses/Rose_3.jpeg" alt="Rosé 3" class="popup-img-slide" />
+            <img src="./img/Dresses/Rose_4.jpeg" alt="Rosé 4" class="popup-img-slide" />
+            <img src="./img/Dresses/Rose_5.jpeg" alt="Rosé 5" class="popup-img-slide" />
           </div>
           <button class="popup-img-prev" onclick="movePopup('popup-dress2', -1)">&#8249;</button>
           <button class="popup-img-next" onclick="movePopup('popup-dress2', 1)">&#8250;</button>
@@ -150,13 +171,14 @@
             <span class="popup-dot active" onclick="goToPopupSlide('popup-dress2', 0)"></span>
             <span class="popup-dot" onclick="goToPopupSlide('popup-dress2', 1)"></span>
             <span class="popup-dot" onclick="goToPopupSlide('popup-dress2', 2)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-dress2', 3)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-dress2', 4)"></span>
           </div>
         </div>
         <div class="popup-info">
-          <p class="popup-name">Satin Maxi Dress</p>
-          <p class="popup-desc">A refined satin maxi with a gentle sheen and graceful drape. Effortlessly elevated for special occasions.</p>
-          <p class="popup-price">$90.00 USD</p>
-          <button class="buy-btn" onclick="addToCart(event, 'Satin Maxi Dress', 90)">Add to Cart</button>
+          <p class="popup-name">Rosé</p>
+          <p class="popup-price">$109.00 USD</p>
+          <button class="buy-btn" onclick="addToCart(event, 'Rosé', 109)">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -166,9 +188,10 @@
         <button class="modal-close" onclick="closeModal('modal-dress3')">✕</button>
         <div class="popup-img-carousel" id="popup-dress3">
           <div class="popup-img-track">
-            <img src="./img/temp_shawl3.jpg" alt="Evening Maxi Dress" class="popup-img-slide active" />
-            <img src="./img/temp_shawl2_2.jpg" alt="Evening Maxi Dress 2" class="popup-img-slide" />
-            <img src="./img/temp_shawl1_3.jpeg" alt="Evening Maxi Dress 3" class="popup-img-slide" />
+            <img src="./img/Dresses/Gulbahar_1.jpeg" alt="Gulbahar 1" class="popup-img-slide active" />
+            <img src="./img/Dresses/Gulbahar_2.jpeg" alt="Gulbahar 2" class="popup-img-slide" />
+            <img src="./img/Dresses/Gulbahar_3.jpeg" alt="Gulbahar 3" class="popup-img-slide" />
+            <img src="./img/Dresses/Gulbahar_4.jpeg" alt="Gulbahar 4" class="popup-img-slide" />
           </div>
           <button class="popup-img-prev" onclick="movePopup('popup-dress3', -1)">&#8249;</button>
           <button class="popup-img-next" onclick="movePopup('popup-dress3', 1)">&#8250;</button>
@@ -176,13 +199,42 @@
             <span class="popup-dot active" onclick="goToPopupSlide('popup-dress3', 0)"></span>
             <span class="popup-dot" onclick="goToPopupSlide('popup-dress3', 1)"></span>
             <span class="popup-dot" onclick="goToPopupSlide('popup-dress3', 2)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-dress3', 3)"></span>
           </div>
         </div>
         <div class="popup-info">
-          <p class="popup-name">Evening Maxi Dress</p>
-          <p class="popup-desc">A statement maxi dress designed for life's most meaningful moments. Elegant, timeless, and made to be remembered.</p>
-          <p class="popup-price">$110.00 USD</p>
-          <button class="buy-btn" onclick="addToCart(event, 'Evening Maxi Dress', 110)">Add to Cart</button>
+          <p class="popup-name">Gulbahar</p>
+          <p class="popup-price">$119.00 USD</p>
+          <button class="buy-btn" onclick="addToCart(event, 'Gulbahar', 119)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-modal" id="modal-dress4">
+      <div class="popup-box">
+        <button class="modal-close" onclick="closeModal('modal-dress4')">✕</button>
+        <div class="popup-img-carousel" id="popup-dress4">
+          <div class="popup-img-track">
+            <img src="./img/Dresses/Sapphire_1.jpeg" alt="Sapphire 1" class="popup-img-slide active" />
+            <img src="./img/Dresses/Sapphire_2.jpeg" alt="Sapphire 2" class="popup-img-slide" />
+            <img src="./img/Dresses/Sapphire_3.jpeg" alt="Sapphire 3" class="popup-img-slide" />
+            <img src="./img/Dresses/Sapphire_4.jpeg" alt="Sapphire 4" class="popup-img-slide" />
+            <img src="./img/Dresses/Sapphire_5.jpeg" alt="Sapphire 5" class="popup-img-slide" />
+          </div>
+          <button class="popup-img-prev" onclick="movePopup('popup-dress4', -1)">&#8249;</button>
+          <button class="popup-img-next" onclick="movePopup('popup-dress4', 1)">&#8250;</button>
+          <div class="popup-dots">
+            <span class="popup-dot active" onclick="goToPopupSlide('popup-dress4', 0)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-dress4', 1)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-dress4', 2)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-dress4', 3)"></span>
+            <span class="popup-dot" onclick="goToPopupSlide('popup-dress4', 4)"></span>
+          </div>
+        </div>
+        <div class="popup-info">
+          <p class="popup-name">Sapphire</p>
+          <p class="popup-price">$89.00 USD</p>
+          <button class="buy-btn" onclick="addToCart(event, 'Sapphire', 89)">Add to Cart</button>
         </div>
       </div>
     </div>

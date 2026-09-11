@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="./style.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    <link rel="icon" type="image/png" href="./img/logo.png" />
+    <link rel="icon" href="./favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
+    <link rel="apple-touch-icon" href="./img/apple-touch-icon.png" />
     <title>Hijabs | AURA</title>
   </head>
   <body>
 
     <header>
       <div class="logo">
-        <img src="./img/logo.png" alt="AURA logo" class="logo-img" />
+        <img src="./img/logo.jpeg" alt="AURA logo" class="logo-img" />
       </div>
       <nav>
         <ul id="menu">
@@ -47,10 +49,10 @@
         <div class="feature-image">
           <div class="custom-carousel" id="hijab-carousel">
             <div class="custom-carousel-track">
-              <img src="./img/temp_hijab_main.jpeg" alt="Featured Hijab" class="custom-carousel-slide active" />
-              <img src="./img/temp_hijab1.jpg" alt="Silky Hijab" class="custom-carousel-slide" />
-              <img src="./img/temp_hijab2.jpg" alt="Lushious Hijab" class="custom-carousel-slide" />
-              <img src="./img/temp_hijab3.jpg" alt="Ninja Hijab" class="custom-carousel-slide" />
+              <img src="./img/temp/temp_hijab_main.jpeg" alt="Featured Hijab" class="custom-carousel-slide active" />
+              <img src="./img/temp/temp_hijab1.jpg" alt="Silky Hijab" class="custom-carousel-slide" />
+              <img src="./img/temp/temp_hijab2.jpg" alt="Lushious Hijab" class="custom-carousel-slide" />
+              <img src="./img/temp/temp_hijab3.jpg" alt="Ninja Hijab" class="custom-carousel-slide" />
               <button class="custom-carousel-prev" onclick="moveCarousel('hijab-carousel', -1)">&#8249;</button>
               <button class="custom-carousel-next" onclick="moveCarousel('hijab-carousel', 1)">&#8250;</button>
             </div>
@@ -66,12 +68,11 @@
     </section>
 
     <section class="products">
-      <h2>HIJABS</h2>
       <div class="product-grid">
 
         <div class="product-card" onclick="openModal('modal-hijab1')">
           <div class="product-image">
-            <img src="./img/temp_hijab1.jpg" alt="Hijab 1" />
+            <img src="./img/temp/temp_hijab1.jpg" alt="Hijab 1" />
             <div class="product-overlay">
               <p class="product-name">Silky Hijab</p>
               <p class="product-price">$30.00 USD</p>
@@ -84,7 +85,7 @@
 
         <div class="product-card" onclick="openModal('modal-hijab2')">
           <div class="product-image">
-            <img src="./img/temp_hijab2.jpg" alt="Hijab 2" />
+            <img src="./img/temp/temp_hijab2.jpg" alt="Hijab 2" />
             <div class="product-overlay">
               <p class="product-name">Lushious Hijab</p>
               <p class="product-price">$50.00 USD</p>
@@ -97,7 +98,7 @@
 
         <div class="product-card" onclick="openModal('modal-hijab3')">
           <div class="product-image">
-            <img src="./img/temp_hijab3.jpg" alt="Hijab 3" />
+            <img src="./img/temp/temp_hijab3.jpg" alt="Hijab 3" />
             <div class="product-overlay">
               <p class="product-name">Ninja Hijab</p>
               <p class="product-price">$40.00 USD</p>
@@ -116,9 +117,9 @@
         <button class="modal-close" onclick="closeModal('modal-hijab1')">✕</button>
         <div class="popup-img-carousel" id="popup-hijab1">
           <div class="popup-img-track">
-            <img src="./img/temp_hijab1.jpg" alt="Silky Hijab" class="popup-img-slide active" />
-            <img src="./img/temp_hijab1_2.jpeg" alt="Silky Hijab 2" class="popup-img-slide" />
-            <img src="./img/temp_hijab1_3.jpeg" alt="Silky Hijab 3" class="popup-img-slide" />
+            <img src="./img/temp/temp_hijab1.jpg" alt="Silky Hijab" class="popup-img-slide active" />
+            <img src="./img/temp/temp_hijab1_2.jpeg" alt="Silky Hijab 2" class="popup-img-slide" />
+            <img src="./img/temp/temp_hijab1_3.jpeg" alt="Silky Hijab 3" class="popup-img-slide" />
           </div>
           <button class="popup-img-prev" onclick="movePopup('popup-hijab1', -1)">&#8249;</button>
           <button class="popup-img-next" onclick="movePopup('popup-hijab1', 1)">&#8250;</button>
@@ -130,7 +131,6 @@
         </div>
         <div class="popup-info">
           <p class="popup-name">Silky Hijab</p>
-          <p class="popup-desc">A smooth, lightweight hijab with a subtle sheen. Perfect for everyday wear or special occasions. Available in multiple colours.</p>
           <p class="popup-price">$30.00 USD</p>
           <button class="buy-btn" onclick="addToCart(event, 'Silky Hijab', 30)">Add to Cart</button>
         </div>
@@ -142,9 +142,9 @@
         <button class="modal-close" onclick="closeModal('modal-hijab2')">✕</button>
         <div class="popup-img-carousel" id="popup-hijab2">
           <div class="popup-img-track">
-            <img src="./img/temp_hijab2.jpg" alt="Lushious Hijab" class="popup-img-slide active" />
-            <img src="./img/temp_hijab2_2.jpeg" alt="Lushious Hijab 2" class="popup-img-slide" />
-            <img src="./img/temp_hijab2_3.jpeg" alt="Lushious Hijab 3" class="popup-img-slide" />
+            <img src="./img/temp/temp_hijab2.jpg" alt="Lushious Hijab" class="popup-img-slide active" />
+            <img src="./img/temp/temp_hijab2_2.jpeg" alt="Lushious Hijab 2" class="popup-img-slide" />
+            <img src="./img/temp/temp_hijab2_3.jpeg" alt="Lushious Hijab 3" class="popup-img-slide" />
           </div>
           <button class="popup-img-prev" onclick="movePopup('popup-hijab2', -1)">&#8249;</button>
           <button class="popup-img-next" onclick="movePopup('popup-hijab2', 1)">&#8250;</button>
@@ -156,7 +156,6 @@
         </div>
         <div class="popup-info">
           <p class="popup-name">Lushious Hijab</p>
-          <p class="popup-desc">A rich, full-bodied hijab with a soft drape and luxurious feel. Handcrafted for those who love a little extra elegance.</p>
           <p class="popup-price">$50.00 USD</p>
           <button class="buy-btn" onclick="addToCart(event, 'Lushious Hijab', 50)">Add to Cart</button>
         </div>
@@ -168,9 +167,9 @@
         <button class="modal-close" onclick="closeModal('modal-hijab3')">✕</button>
         <div class="popup-img-carousel" id="popup-hijab3">
           <div class="popup-img-track">
-            <img src="./img/temp_hijab3.jpg" alt="Ninja Hijab" class="popup-img-slide active" />
-            <img src="./img/temp_hijab3_2.jpeg" alt="Ninja Hijab 2" class="popup-img-slide" />
-            <img src="./img/temp_hijab3_3.jpeg" alt="Ninja Hijab 3" class="popup-img-slide" />
+            <img src="./img/temp/temp_hijab3.jpg" alt="Ninja Hijab" class="popup-img-slide active" />
+            <img src="./img/temp/temp_hijab3_2.jpeg" alt="Ninja Hijab 2" class="popup-img-slide" />
+            <img src="./img/temp/temp_hijab3_3.jpeg" alt="Ninja Hijab 3" class="popup-img-slide" />
           </div>
           <button class="popup-img-prev" onclick="movePopup('popup-hijab3', -1)">&#8249;</button>
           <button class="popup-img-next" onclick="movePopup('popup-hijab3', 1)">&#8250;</button>
@@ -182,7 +181,6 @@
         </div>
         <div class="popup-info">
           <p class="popup-name">Ninja Hijab</p>
-          <p class="popup-desc">A sleek, secure-fit ninja hijab that stays in place all day. Comfortable, breathable, and made for the woman always on the move.</p>
           <p class="popup-price">$40.00 USD</p>
           <button class="buy-btn" onclick="addToCart(event, 'Ninja Hijab', 40)">Add to Cart</button>
         </div>
