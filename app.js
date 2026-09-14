@@ -71,37 +71,21 @@ function goToPopupSlide(id, index) {
 }
 
 /* =========================================================
-   PRODUCT MODALS
+   PRODUCT MODALS (full-screen split view)
+   Images are static — a large main image with clickable
+   thumbnails. No auto-rotation or sliding anywhere.
    ========================================================= */
-let popupAutoTimer = null;
-
-function startPopupAutoRotate(modalEl) {
-  stopPopupAutoRotate();
-  const carousel = modalEl.querySelector('.popup-img-carousel');
-  if (!carousel || !carousel.id) return;
-  const slides = carousel.querySelectorAll('.popup-img-slide');
-  if (slides.length < 2) return; // nothing to rotate through
-  popupAutoTimer = setInterval(() => movePopup(carousel.id, 1), 2000);
-}
-
-function stopPopupAutoRotate() {
-  if (popupAutoTimer) {
-    clearInterval(popupAutoTimer);
-    popupAutoTimer = null;
-  }
-}
-
 function openModal(id) {
   const el = document.getElementById(id);
   if (!el) return;
   el.style.display = 'flex';
-  startPopupAutoRotate(el); // auto-advance the popup images every 2s
+  document.body.style.overflow = 'hidden'; // lock scroll behind the full-screen view
 }
 
 function closeModal(id) {
   const el = document.getElementById(id);
   if (el) el.style.display = 'none';
-  stopPopupAutoRotate();
+  document.body.style.overflow = '';
 }
 
 /* =========================================================
@@ -295,6 +279,85 @@ function injectCart() {
   document.body.appendChild(drawer);
 }
 
+/* Static image thumbnails — replaces all carousel movement. Builds a
+   thumbnail strip from the existing slides for both the feature galleries
+   and the product detail popups. Clicking a thumbnail swaps the main image
+   instantly (no sliding, no auto-play). */
+function buildThumbStrip(container, slideSelector) {
+  const slides = container.querySelectorAll(slideSelector);
+  if (slides.length < 2) return;               // single image — no thumbs needed
+  if (container.querySelector('.thumbs')) return; // already built
+
+  const strip = document.createElement('div');
+  strip.className = 'thumbs';
+
+  slides.forEach(function (slide, i) {
+    const thumb = document.createElement('img');
+    thumb.src = slide.src;
+    thumb.alt = slide.alt || '';
+    thumb.loading = 'lazy';
+    thumb.className = 'thumb' + (slide.classList.contains('active') ? ' active' : '');
+    thumb.addEventListener('click', function (e) {
+      e.stopPropagation();
+      slides.forEach(function (s, j) { s.classList.toggle('active', j === i); });
+      strip.querySelectorAll('.thumb').forEach(function (t, j) {
+        t.classList.toggle('active', j === i);
+      });
+    });
+    strip.appendChild(thumb);
+  });
+
+  container.appendChild(strip);
+}
+
+function buildThumbnails() {
+  document.querySelectorAll('.custom-carousel').forEach(function (c) {
+    buildThumbStrip(c, '.custom-carousel-slide');
+  });
+  document.querySelectorAll('.popup-img-carousel').forEach(function (c) {
+    buildThumbStrip(c, '.popup-img-slide');
+  });
+}
+
+/* Size selector — injected into every product detail popup so all pages
+   stay in sync. Sizes are selectable (visual); the product is a single
+   colorway so no colour swatches are shown. */
+const AURA_SIZES = ['XS', 'S', 'M', 'L', 'XL'];
+
+function injectSizeSelectors() {
+  document.querySelectorAll('.popup-info').forEach(function (info) {
+    if (info.querySelector('.popup-sizes')) return; // already added
+    const buyBtn = info.querySelector('.buy-btn');
+
+    const wrap = document.createElement('div');
+    wrap.className = 'popup-sizes';
+    wrap.innerHTML =
+      '<span class="size-label">Size</span>' +
+      '<div class="size-options">' +
+      AURA_SIZES.map(function (s) {
+        return '<button type="button" class="size-btn">' + s + '</button>';
+      }).join('') +
+      '</div>';
+
+    // Single-select toggle within this popup's size row
+    wrap.querySelectorAll('.size-btn').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        wrap.querySelectorAll('.size-btn').forEach(function (b) {
+          b.classList.remove('selected');
+        });
+        btn.classList.add('selected');
+      });
+    });
+
+    if (buyBtn) {
+      info.insertBefore(wrap, buyBtn);
+    } else {
+      info.appendChild(wrap);
+    }
+  });
+}
+
 function injectSignup() {
   const overlay = document.createElement('div');
   overlay.className = 'signup-overlay';
@@ -327,6 +390,8 @@ function injectSignup() {
 document.addEventListener('DOMContentLoaded', function () {
   injectCart();
   injectSignup();
+  injectSizeSelectors();
+  buildThumbnails();
   renderCart();
   updateCartCount();
   maybeShowSignup();
@@ -343,19 +408,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Auto-advance any feature carousels present on the page
-  document.querySelectorAll('.custom-carousel').forEach(function (carousel) {
-    if (carousel.id) {
-      setInterval(() => moveCarousel(carousel.id, 1), 3000);
-    }
-  });
-
   // Close product modals when clicking the backdrop
   document.querySelectorAll('.product-modal').forEach(function (modal) {
     modal.addEventListener('click', function (e) {
       if (e.target === modal) {
         modal.style.display = 'none';
-        stopPopupAutoRotate();
+        document.body.style.overflow = '';
       }
     });
   });
