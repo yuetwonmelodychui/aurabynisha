@@ -311,11 +311,35 @@ function buildThumbStrip(container, slideSelector) {
 }
 
 function buildThumbnails() {
-  document.querySelectorAll('.custom-carousel').forEach(function (c) {
-    buildThumbStrip(c, '.custom-carousel-slide');
-  });
+  // Product detail popups keep the static thumbnail strip. The main
+  // "Newest Editions" feature carousel slides on its own (see below).
   document.querySelectorAll('.popup-img-carousel').forEach(function (c) {
     buildThumbStrip(c, '.popup-img-slide');
+  });
+}
+
+/* Auto-sliding feature carousels — the main "Newest Editions" gallery on
+   each product page rotates through its slides and pauses on hover. Manual
+   dots still work; clicking one restarts the timer. */
+function initFeatureCarousels() {
+  const INTERVAL = 4000;
+  document.querySelectorAll('.custom-carousel').forEach(function (c) {
+    const slides = c.querySelectorAll('.custom-carousel-slide');
+    if (slides.length < 2) return; // single image — nothing to rotate
+
+    let timer;
+    function start() { timer = setInterval(function () { moveCarousel(c.id, 1); }, INTERVAL); }
+    function stop() { clearInterval(timer); }
+
+    c.addEventListener('mouseenter', stop);
+    c.addEventListener('mouseleave', start);
+    // Restart the timer after any manual navigation (dots or arrows) so it
+    // doesn't jump again immediately after the user clicks.
+    c.querySelectorAll('.carousel-dot, .custom-carousel-prev, .custom-carousel-next')
+      .forEach(function (ctrl) {
+        ctrl.addEventListener('click', function () { stop(); start(); });
+      });
+    start();
   });
 }
 
@@ -392,6 +416,7 @@ document.addEventListener('DOMContentLoaded', function () {
   injectSignup();
   injectSizeSelectors();
   buildThumbnails();
+  initFeatureCarousels();
   renderCart();
   updateCartCount();
   maybeShowSignup();

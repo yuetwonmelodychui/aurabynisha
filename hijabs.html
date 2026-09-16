@@ -20,7 +20,6 @@
         <ul id="menu">
           <li><a href="./index.html">Welcome</a></li>
           <li><a href="./hijabs.html" class="active">Hijabs</a></li>
-          <li><a href="./shawls.html">Shawls</a></li>
           <li><a href="./abayas.html">Abayas</a></li>
           <li><a href="./dresses.html">Maxi Dresses</a></li>
           <li><a href="./about.html">About Us</a></li>
@@ -49,18 +48,14 @@
         <div class="feature-image">
           <div class="custom-carousel" id="hijab-carousel">
             <div class="custom-carousel-track">
-              <img src="./img/temp/temp_hijab_main.jpeg" alt="Featured Hijab" class="custom-carousel-slide active" />
-              <img src="./img/temp/temp_hijab1.jpg" alt="Silky Hijab" class="custom-carousel-slide" />
-              <img src="./img/temp/temp_hijab2.jpg" alt="Lushious Hijab" class="custom-carousel-slide" />
-              <img src="./img/temp/temp_hijab3.jpg" alt="Ninja Hijab" class="custom-carousel-slide" />
+              <img src="./img/Hijabs/Burgundy_1.jpeg" alt="Burgundy Hijab" class="custom-carousel-slide active" />
+              <img src="./img/Hijabs/Burgundy_2.jpeg" alt="Burgundy Hijab" class="custom-carousel-slide" />
               <button class="custom-carousel-prev" onclick="moveCarousel('hijab-carousel', -1)">&#8249;</button>
               <button class="custom-carousel-next" onclick="moveCarousel('hijab-carousel', 1)">&#8250;</button>
             </div>
             <div class="carousel-dots">
               <span class="carousel-dot active" onclick="goToSlide('hijab-carousel', 0)"></span>
               <span class="carousel-dot" onclick="goToSlide('hijab-carousel', 1)"></span>
-              <span class="carousel-dot" onclick="goToSlide('hijab-carousel', 2)"></span>
-              <span class="carousel-dot" onclick="goToSlide('hijab-carousel', 3)"></span>
             </div>
           </div>
         </div>
@@ -72,41 +67,41 @@
 
         <div class="product-card" onclick="openModal('modal-hijab1')">
           <div class="product-image">
-            <img src="./img/temp/temp_hijab1.jpg" alt="Hijab 1" loading="lazy" />
+            <img src="./img/Hijabs/Burgundy_1.jpeg" alt="Burgundy Hijab" loading="lazy" />
             <div class="product-overlay">
-              <p class="product-name">Silky Hijab</p>
-              <p class="product-price">$30.00 USD</p>
-              <button class="buy-btn" onclick="addToCart(event, 'Silky Hijab', 30)">Add to Cart</button>
-            </div>
-          </div>
-          <p class="product-name">Silky Hijab</p>
-          <p class="product-price">$30.00 USD</p>
-        </div>
-
-        <div class="product-card" onclick="openModal('modal-hijab2')">
-          <div class="product-image">
-            <img src="./img/temp/temp_hijab2.jpg" alt="Hijab 2" loading="lazy" />
-            <div class="product-overlay">
-              <p class="product-name">Lushious Hijab</p>
+              <p class="product-name">Burgundy</p>
               <p class="product-price">$50.00 USD</p>
-              <button class="buy-btn" onclick="addToCart(event, 'Lushious Hijab', 50)">Add to Cart</button>
+              <button class="buy-btn" onclick="addToCart(event, 'Burgundy', 50)">Add to Cart</button>
             </div>
           </div>
-          <p class="product-name">Lushious Hijab</p>
+          <p class="product-name">Burgundy</p>
           <p class="product-price">$50.00 USD</p>
         </div>
 
-        <div class="product-card" onclick="openModal('modal-hijab3')">
+        <div class="product-card" onclick="openModal('modal-hijab1')">
           <div class="product-image">
-            <img src="./img/temp/temp_hijab3.jpg" alt="Hijab 3" loading="lazy" />
+            <img src="./img/Hijabs/Burgundy_1.jpeg" alt="Burgundy Hijab" loading="lazy" />
             <div class="product-overlay">
-              <p class="product-name">Ninja Hijab</p>
-              <p class="product-price">$40.00 USD</p>
-              <button class="buy-btn" onclick="addToCart(event, 'Ninja Hijab', 40)">Add to Cart</button>
+              <p class="product-name">Burgundy</p>
+              <p class="product-price">$50.00 USD</p>
+              <button class="buy-btn" onclick="addToCart(event, 'Burgundy', 50)">Add to Cart</button>
             </div>
           </div>
-          <p class="product-name">Ninja Hijab</p>
-          <p class="product-price">$40.00 USD</p>
+          <p class="product-name">Burgundy</p>
+          <p class="product-price">$50.00 USD</p>
+        </div>
+
+        <div class="product-card" onclick="openModal('modal-hijab1')">
+          <div class="product-image">
+            <img src="./img/Hijabs/Burgundy_1.jpeg" alt="Burgundy Hijab" loading="lazy" />
+            <div class="product-overlay">
+              <p class="product-name">Burgundy</p>
+              <p class="product-price">$50.00 USD</p>
+              <button class="buy-btn" onclick="addToCart(event, 'Burgundy', 50)">Add to Cart</button>
+            </div>
+          </div>
+          <p class="product-name">Burgundy</p>
+          <p class="product-price">$50.00 USD</p>
         </div>
 
       </div>
@@ -117,72 +112,20 @@
         <button class="modal-close" onclick="closeModal('modal-hijab1')">✕</button>
         <div class="popup-img-carousel" id="popup-hijab1">
           <div class="popup-img-track">
-            <img src="./img/temp/temp_hijab1.jpg" alt="Silky Hijab" loading="lazy" class="popup-img-slide active" />
-            <img src="./img/temp/temp_hijab1_2.jpeg" alt="Silky Hijab 2" loading="lazy" class="popup-img-slide" />
-            <img src="./img/temp/temp_hijab1_3.jpeg" alt="Silky Hijab 3" loading="lazy" class="popup-img-slide" />
+            <img src="./img/Hijabs/Burgundy_1.jpeg" alt="Burgundy 1" loading="lazy" class="popup-img-slide active" />
+            <img src="./img/Hijabs/Burgundy_2.jpeg" alt="Burgundy 2" loading="lazy" class="popup-img-slide" />
           </div>
           <button class="popup-img-prev" onclick="movePopup('popup-hijab1', -1)">&#8249;</button>
           <button class="popup-img-next" onclick="movePopup('popup-hijab1', 1)">&#8250;</button>
           <div class="popup-dots">
             <span class="popup-dot active" onclick="goToPopupSlide('popup-hijab1', 0)"></span>
             <span class="popup-dot" onclick="goToPopupSlide('popup-hijab1', 1)"></span>
-            <span class="popup-dot" onclick="goToPopupSlide('popup-hijab1', 2)"></span>
           </div>
         </div>
         <div class="popup-info">
-          <p class="popup-name">Silky Hijab</p>
-          <p class="popup-price">$30.00 USD</p>
-          <button class="buy-btn" onclick="addToCart(event, 'Silky Hijab', 30)">Add to Cart</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-modal" id="modal-hijab2">
-      <div class="popup-box">
-        <button class="modal-close" onclick="closeModal('modal-hijab2')">✕</button>
-        <div class="popup-img-carousel" id="popup-hijab2">
-          <div class="popup-img-track">
-            <img src="./img/temp/temp_hijab2.jpg" alt="Lushious Hijab" loading="lazy" class="popup-img-slide active" />
-            <img src="./img/temp/temp_hijab2_2.jpeg" alt="Lushious Hijab 2" loading="lazy" class="popup-img-slide" />
-            <img src="./img/temp/temp_hijab2_3.jpeg" alt="Lushious Hijab 3" loading="lazy" class="popup-img-slide" />
-          </div>
-          <button class="popup-img-prev" onclick="movePopup('popup-hijab2', -1)">&#8249;</button>
-          <button class="popup-img-next" onclick="movePopup('popup-hijab2', 1)">&#8250;</button>
-          <div class="popup-dots">
-            <span class="popup-dot active" onclick="goToPopupSlide('popup-hijab2', 0)"></span>
-            <span class="popup-dot" onclick="goToPopupSlide('popup-hijab2', 1)"></span>
-            <span class="popup-dot" onclick="goToPopupSlide('popup-hijab2', 2)"></span>
-          </div>
-        </div>
-        <div class="popup-info">
-          <p class="popup-name">Lushious Hijab</p>
+          <p class="popup-name">Burgundy</p>
           <p class="popup-price">$50.00 USD</p>
-          <button class="buy-btn" onclick="addToCart(event, 'Lushious Hijab', 50)">Add to Cart</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-modal" id="modal-hijab3">
-      <div class="popup-box">
-        <button class="modal-close" onclick="closeModal('modal-hijab3')">✕</button>
-        <div class="popup-img-carousel" id="popup-hijab3">
-          <div class="popup-img-track">
-            <img src="./img/temp/temp_hijab3.jpg" alt="Ninja Hijab" loading="lazy" class="popup-img-slide active" />
-            <img src="./img/temp/temp_hijab3_2.jpeg" alt="Ninja Hijab 2" loading="lazy" class="popup-img-slide" />
-            <img src="./img/temp/temp_hijab3_3.jpeg" alt="Ninja Hijab 3" loading="lazy" class="popup-img-slide" />
-          </div>
-          <button class="popup-img-prev" onclick="movePopup('popup-hijab3', -1)">&#8249;</button>
-          <button class="popup-img-next" onclick="movePopup('popup-hijab3', 1)">&#8250;</button>
-          <div class="popup-dots">
-            <span class="popup-dot active" onclick="goToPopupSlide('popup-hijab3', 0)"></span>
-            <span class="popup-dot" onclick="goToPopupSlide('popup-hijab3', 1)"></span>
-            <span class="popup-dot" onclick="goToPopupSlide('popup-hijab3', 2)"></span>
-          </div>
-        </div>
-        <div class="popup-info">
-          <p class="popup-name">Ninja Hijab</p>
-          <p class="popup-price">$40.00 USD</p>
-          <button class="buy-btn" onclick="addToCart(event, 'Ninja Hijab', 40)">Add to Cart</button>
+          <button class="buy-btn" onclick="addToCart(event, 'Burgundy', 50)">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -199,7 +142,7 @@
     </section>
 
     <footer>
-      <p>©2025 AURA by Nisha. Designed by Melody Chui.</p>
+      <p>©2026 AURA by Nisha. Designed by Melody Chui.</p>
     </footer>
 
     <script src="./app.js"></script>

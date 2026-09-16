@@ -200,7 +200,7 @@ nav ul li a.active {
 }
 
 .welcome p {
-    font-family: var(--font-content);
+    font-family: var(--font-text);
     font-size: 1rem;
     line-height: 1.9;
     color: var(--viridian);
@@ -777,6 +777,7 @@ nav ul li a.active {
     object-fit: cover;
     object-position: center;
     opacity: 0;
+    transition: opacity 0.8s ease;
 }
 
 .custom-carousel-slide.active {
@@ -785,7 +786,21 @@ nav ul li a.active {
 
 .custom-carousel-prev,
 .custom-carousel-next {
-    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: var(--white);
+    font-size: 2.5rem;
+    padding: 5px 16px 11px 16px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.2s;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .custom-carousel-prev:hover,
@@ -797,7 +812,10 @@ nav ul li a.active {
 .custom-carousel-next { right: 0; }
 
 .carousel-dots {
-    display: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
 }
 
 .carousel-dot {
