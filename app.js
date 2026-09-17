@@ -12,6 +12,11 @@
 const STRIPE_CHECKOUT_URL = 'https://buy.stripe.com/test_14AcN52iI8A7aja7vk0x200';
 const CART_KEY = 'aura_cart';
 
+// Feedback form → Google Sheet. Paste the Google Apps Script Web App URL here
+// (it ends in "/exec"). Until this is set, the form just shows the thank-you
+// message without saving anywhere. See the setup steps for how to get the URL.
+const FEEDBACK_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxqiQwUtlL9XZwg1_idS1xSXyshEBowiF2RjiD4LHqfrP-iyAOUmf_Q218fTVZ5e0LDcg/exec';
+
 /* =========================================================
    MOBILE MENU
    ========================================================= */
@@ -227,13 +232,26 @@ function submitSignup(event) {
   sessionStorage.setItem('aura_signup_seen', '1');
 }
 
-/* Feedback form — no backend yet; shows a thank-you message on submit.
-   Wire this to a form service (Formspree, etc.) later if you want the
-   messages emailed to you. */
+/* Feedback form — posts the submission to a Google Sheet (via the Apps Script
+   Web App at FEEDBACK_ENDPOINT) and shows a thank-you message. If the endpoint
+   isn't set yet, it just shows the thank-you without saving. */
 function submitFeedback(event) {
   event.preventDefault();
   const form = document.getElementById('feedback-form');
   const thanks = document.getElementById('feedback-thanks');
+
+  if (form && FEEDBACK_ENDPOINT) {
+    const data = new URLSearchParams({
+      name: form.elements['name'].value,
+      email: form.elements['email'].value,
+      feedback: form.elements['message'].value
+    });
+    // no-cors: fire-and-forget append. We can't read the response, but the row
+    // still gets written. Errors are logged, never shown to the visitor.
+    fetch(FEEDBACK_ENDPOINT, { method: 'POST', mode: 'no-cors', body: data })
+      .catch(function (err) { console.error('Feedback submit failed:', err); });
+  }
+
   if (form) form.style.display = 'none';
   if (thanks) thanks.style.display = 'block';
 }
